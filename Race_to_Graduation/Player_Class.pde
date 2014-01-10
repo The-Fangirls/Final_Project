@@ -6,10 +6,11 @@ class Player {
   
   Player() {
     loc = new PVector(mouseX, height-d);
-    d = 100;
+    d = 50;
   }
   
   void display() {
+    fill(255,0,0);
     ellipse(loc.x,loc.y,d,d);
   }
   
