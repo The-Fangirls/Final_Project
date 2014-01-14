@@ -5,14 +5,17 @@ ArrayList<HGGood> hgg = new ArrayList<HGGood>();
 int currentTime = 0;
 int changeTime = 0;
 int oldTime = 0;
+//PImage hungergames;
 
 void setup() {
  size(600,600);
  p1 = new Player(); 
  hgg.add(new HGGood(width/2, 120));
+// hungergames = loadImage("hgg1.png");
 }
 
 void draw() {
+//  image(hungergames,width/2,height/2);
   //timing mechanisms
   currentTime = millis();
   changeTime = currentTime-oldTime;
