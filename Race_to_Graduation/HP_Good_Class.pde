@@ -6,11 +6,11 @@ class HPGood {
   PImage hpgood;
   int d;
   
-  HGGood(float x, float y) {
+  HPGood(float x, float y) {
     loc = new PVector (x, y);
     vel = new PVector (0, random(1,4));
     int r = int(random(1,4));
-    hggood = loadImage("hpg" + r + ".png");
+    hpgood = loadImage("hpg" + r + ".png");
     d = 30;
   }
   
