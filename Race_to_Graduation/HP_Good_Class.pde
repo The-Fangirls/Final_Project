@@ -1,5 +1,5 @@
 //this is a class for the good things on the Harry Potter Level
-
+if(HarryPotterGame = true){
 
 class HPGood {
   PVector loc, vel;
@@ -20,8 +20,8 @@ class HPGood {
   
   void move() {
     loc.add(vel);
-  }
-  
+  } 
+}
 //  void reset() {
 //    loc.set(random(width), -d);
 //    vel.set(0, random(1,4));
