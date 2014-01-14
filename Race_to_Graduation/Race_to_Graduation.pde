@@ -25,6 +25,12 @@ void draw() {
     HGGood h = hgg.get(i);
     h.display();
     h.move();
+    if(p1.recognize(h) == true) {
+      hgg.remove(i);
+    }
+    if(h.loc.y >= height) {
+      hgg.remove(i);
+    }
   }
   p1.display();
   p1.update();

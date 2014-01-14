@@ -18,4 +18,12 @@ class Player {
     loc.set(mouseX,height-d);
   }
   
+  boolean recognize(HGGood h) {
+    if(loc.dist(h.loc) < d/2 + h.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
