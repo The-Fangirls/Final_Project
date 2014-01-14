@@ -1,6 +1,7 @@
 //This is the code for the game
 Player p1;
 boolean HarryPotterGame;
+PImage background;
 
 
 void setup() {
@@ -11,7 +12,7 @@ void setup() {
 void draw() {
   background(0);
   if(HarryPotterGame = true){
-   background( 
+   background(hpbackground); 
   }
   p1.display();
   p1.update();
