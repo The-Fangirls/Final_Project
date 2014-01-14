@@ -2,17 +2,19 @@
 
 class HGGood {
   PVector loc, vel;
+  PImage hggood;
   int d;
   
   HGGood(float x, float y) {
     loc = new PVector (x, y);
     vel = new PVector (0, random(1,4));
-    d = 20;
+    int r = int(random(1,4));
+    hggood = loadImage("hgg" + r + ".png");
+    d = 30;
   }
   
   void display() {
-    fill(0,255,0);
-    ellipse(loc.x,loc.y,d,d);
+    image(hggood, loc.x,loc.y,d,d);
   }
   
   void move() {
