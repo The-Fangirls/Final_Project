@@ -9,7 +9,7 @@ class DGood {
   DGood(float x, float y) {
     loc = new PVector (x, y);
     vel = new PVector (0, random(1,4));
-    int r = int(random(1,4));
+    int r = int(random(1,3));
     dgood = loadImage("dg" + r + ".png");
     d = 30;
   }
