@@ -26,4 +26,11 @@ class Player {
       return false;
     }
   }
+  boolean recognize(HGBad b) {
+   if(loc.dist(b.loc) < d/2 + b.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    } 
 }

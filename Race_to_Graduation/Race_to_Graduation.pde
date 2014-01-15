@@ -2,6 +2,7 @@
 
 Player p1;
 ArrayList<HGGood> hgg = new ArrayList<HGGood>();
+ArrayList<HGBad> hgb = new ArrayList<HGBad>();
 
 //timing mechanisms
 int currentTime = 0;
@@ -14,6 +15,7 @@ void setup() {
  size(600,600);
  p1 = new Player(); 
  hgg.add(new HGGood(width/2, 120));
+ hgb.add(new HGBad(width/2, -5));
 }
 
 void draw() {
@@ -23,6 +25,7 @@ void draw() {
   if (changeTime > 2000) {
     oldTime = currentTime;
     hgg.add(new HGGood(random(width),-5));
+    hgb.add(new HGBad(random(width),-5));
   }
   background(0);
   textSize(30);
@@ -41,6 +44,17 @@ void draw() {
     }
     if(h.loc.y >= height) {
       hgg.remove(i);
+    }
+  for(int i = hgb.size()-1; i >= 0; i--) {
+    HGBad b = hgb.get(i);
+    b.display();
+    b.move();
+    if(p1.recognize(b) == true) {
+      hgb.remove(i);
+      score++;
+    }
+    if(b.loc.y >= height) {
+      hgb.remove(i);
     }
   }
   p1.display();
