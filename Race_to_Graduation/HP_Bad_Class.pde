@@ -9,7 +9,7 @@ class HPBad {
   HPBad(float x, float y) {
     loc = new PVector (x, y);
     vel = new PVector (0, random(1, 4));
-    int r = int(random(1, 4));
+    int r = int(random(1, 5));
     hpbad = loadImage("hpb" + r + ".png");
     d = 30;
   }
