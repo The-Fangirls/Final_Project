@@ -1,6 +1,7 @@
 //this will be the code for the player class
 
 class Player {
+  //these are the variables needed to great the player class
   PVector loc;
   int d;
 
@@ -18,7 +19,8 @@ class Player {
     loc.set(mouseX, height-d);
   }
 
-  boolean recognize(HGGood h) {
+  //this boolean will be able to tell when the player intersects with the good things in the hunger games class
+  boolean findhgg(HGGood h) {
     if (loc.dist(h.loc) < d/2 + h.d/2 ) {
       return true;
     }
@@ -26,7 +28,8 @@ class Player {
       return false;
     }
   }
-  boolean find(HGBad b) {
+  //this boolean will be able to tell when the player intersects with the bad things in the hunger games class
+  boolean findhgb(HGBad b) {
     if (loc.dist(b.loc) < d/2 + b.d/2 ) {
       return true;
     }
