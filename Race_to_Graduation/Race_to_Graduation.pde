@@ -2,8 +2,8 @@
 
 //initializing classes
 Player p1;
-ArrayList<HGGood> hgg = new ArrayList<HGGood>();
-ArrayList<HGBad> hgb = new ArrayList<HGBad>();
+ArrayList<HPGood> hpg = new ArrayList<HPGood>();
+ArrayList<HPBad> hpb = new ArrayList<HPBad>();
 
 //timing mechanisms
 int currentTime = 0;
@@ -17,8 +17,8 @@ int lives = 3;
 void setup() {
   size(600, 600);
   p1 = new Player(); 
-  hgg.add(new HGGood(width/2, 120));
-  hgb.add(new HGBad(width/2, -5));
+  hpg.add(new HPGood(width/2, 120));
+  hpb.add(new HPBad(width/2, -5));
 }
 
 void draw() {
@@ -40,36 +40,37 @@ void draw() {
   changeTime = currentTime-oldTime;
   if (changeTime > 2000) {
     oldTime = currentTime;
-    hgg.add(new HGGood(random(width), -5));
-    hgb.add(new HGBad(random(width), -5));
+    hpg.add(new HPGood(random(width), -5));
+    hpb.add(new HPBad(random(width), -5));
   }
   
-  for (int i = hgg.size()-1; i >= 0; i--) {
-    HGGood h = hgg.get(i);
+  for (int i = hpg.size()-1; i >= 0; i--) {
+    HPGood h = hpg.get(i);
     h.display();
     h.move();
-    if (p1.findhgg(h) == true) {
-      hgg.remove(i);
+    if (p1.findhpg(h) == true) {
+      hpg.remove(i);
       score++;
     }
     if (h.loc.y >= height) {
-      hgg.remove(i);
+      hpg.remove(i);
     }
   }
-    for (int j = hgb.size()-1; j >= 0; j--) {
-      HGBad b = hgb.get(j);
+    for (int j = hpb.size()-1; j >= 0; j--) {
+      HPBad b = hpb.get(j);
       b.display();
       b.move();
-      if (p1.findhgb(b) == true) {
-        hgb.remove(j);
+      if (p1.findhpb(b) == true) {
+        hpb.remove(j);
         lives--;
       }
       if (b.loc.y >= height) {
-        hgb.remove(j);
+        hpb.remove(j);
       }
     }
     p1.display();
     p1.update();
+ 
   }
 
 

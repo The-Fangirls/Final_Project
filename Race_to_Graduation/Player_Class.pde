@@ -37,5 +37,27 @@ class Player {
       return false;
     }
   }
+  
+  
+  boolean findhpg(HPGood h) {
+    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  
+   boolean findhpb(HPBad b) {
+    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  
+  
+  
 }
 
