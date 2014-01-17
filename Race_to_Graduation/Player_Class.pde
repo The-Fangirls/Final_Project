@@ -3,22 +3,38 @@
 class Player {
   //these are the variables needed to great the player class
   PVector loc;
+<<<<<<< HEAD
   PImage harrypotter;
+=======
+  PImage katniss;
+>>>>>>> origin/Divergent-Classes
   int d;
 
   Player() {
     loc = new PVector(mouseX, height-d);
+<<<<<<< HEAD
     harrypotter = loadImage("hpplayer.png");
+=======
+    katniss = loadImage("hgplayer.png");
+>>>>>>> origin/Divergent-Classes
     d = 50;
   }
 
   void display() {
     fill(255, 0, 0);
+<<<<<<< HEAD
     image(harrypotter, loc.x ,loc.y, d, d+25);
   }
 
   void update() {
     loc.set(mouseX, height-d * 2);
+=======
+    image(katniss, loc.x, loc.y, d ,d+50);
+  }
+
+  void update() {
+    loc.set(mouseX, height-d*2);
+>>>>>>> origin/Divergent-Classes
   }
 
   //this boolean will be able to tell when the player intersects with the good things in the hunger games class
