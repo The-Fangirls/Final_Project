@@ -24,21 +24,23 @@ int lives = 3;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
-   HarryPotterGame = true;
-   HungerGamesGame = false;
+  //creating innitial values of booleans 
+  HarryPotterGame = false;
+   HungerGamesGame = true;
   size(600, 600);
+  //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
   hpb.add(new HPBad(width/2, -5));
   hgg.add(new HGGood(width/2, 120));
   hgb.add(new HGBad(width/2, -5));
- 
 }
 
 void draw() {
-//setup of lives and score
-//harry potter game
+  
+//Harry Potter level
 if(HarryPotterGame == true && HungerGamesGame == false){  
+  //background and score/lives keeper
   background(0);
   textSize(30);
   fill(255);
@@ -60,8 +62,9 @@ if(HarryPotterGame == true && HungerGamesGame == false){
     hpg.add(new HPGood(random(width), -5));
     hpb.add(new HPBad(random(width), -5));
   }
-  
+  //method of displaying and dropping objects
   for (int i = hpg.size()-1; i >= 0; i--) {
+    //good class
     HPGood h = hpg.get(i);
     h.display();
     h.move();
@@ -74,6 +77,7 @@ if(HarryPotterGame == true && HungerGamesGame == false){
     }
   }
     for (int j = hpb.size()-1; j >= 0; j--) {
+      //bad class
       HPBad b = hpb.get(j);
       b.display();
       b.move();
@@ -85,11 +89,14 @@ if(HarryPotterGame == true && HungerGamesGame == false){
         hpb.remove(j);
       }
     }
+    //display the player
     p1.display();
     p1.update(); 
    }
-
+   
+//Hunger Games level
 if(HungerGamesGame == true && HarryPotterGame == false){  
+  //background and score/lives keeper
   background(0);
   textSize(30);
   fill(255);
@@ -103,7 +110,6 @@ if(HungerGamesGame == true && HarryPotterGame == false){
   text("Score", 60, 20);
   text("Lives", width-100,20);
 
-
 //timing mechanisms
   currentTime = millis();
   changeTime = currentTime-oldTime;
@@ -112,8 +118,9 @@ if(HungerGamesGame == true && HarryPotterGame == false){
     hgg.add(new HGGood(random(width), -5));
     hgb.add(new HGBad(random(width), -5));
   }
-  
+  //method of displaying and dropping obejcts
   for (int i = hgg.size()-1; i >= 0; i--) {
+    //good objects
     HGGood h = hgg.get(i);
     h.display();
     h.move();
@@ -126,6 +133,7 @@ if(HungerGamesGame == true && HarryPotterGame == false){
     }
   }
     for (int j = hgb.size()-1; j >= 0; j--) {
+      //bad objects
       HGBad b = hgb.get(j);
       b.display();
       b.move();
@@ -137,18 +145,16 @@ if(HungerGamesGame == true && HarryPotterGame == false){
         hgb.remove(j);
       }
     }
+    //display the player
     p1.display();
-    p1.update(); 
+    p1.update();
+    //method of changing from Hunger Games level to Harry Potter level
+    if(score >= 15) {
+      score = 0;
+      HarryPotterGame = true;
+      HungerGamesGame = false;
+    }
    }
-
-
-
-
-
-
-
-
-
  }
 
 
