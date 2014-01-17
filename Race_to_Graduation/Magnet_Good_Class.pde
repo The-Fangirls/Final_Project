@@ -2,7 +2,7 @@
 
 class MGood {
   PVector loc, vel;
-  PImage hggood;
+  PImage mgood;
   int d;
   
   MGood(float x, float y) {
