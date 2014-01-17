@@ -3,6 +3,7 @@
 //booleans
 boolean HarryPotterGame;
 boolean HungerGamesGame;
+boolean DivergentGame;
 
 
 //initializing classes
@@ -13,6 +14,9 @@ ArrayList<HPBad> hpb = new ArrayList<HPBad>();
 //Hunger Games
 ArrayList<HGGood> hgg = new ArrayList<HGGood>();
 ArrayList<HGBad> hgb = new ArrayList<HGBad>();
+//Divergent
+ArrayList<DGood> dg = new ArrayList<DGood>();
+ArrayList<DBad> db = new ArrayList<DBad>();
 
 //timing mechanisms
 int currentTime = 0;
@@ -21,12 +25,15 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
+int scorelimit = 15;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
+  imageMode(CENTER);
   //creating innitial values of booleans 
   HarryPotterGame = false;
    HungerGamesGame = true;
+   DivergentGame = false;
   size(600, 600);
   //adding objects that are part of a class
   p1 = new Player(); 
@@ -34,12 +41,14 @@ void setup() {
   hpb.add(new HPBad(width/2, -5));
   hgg.add(new HGGood(width/2, 120));
   hgb.add(new HGBad(width/2, -5));
+  dg.add(new DGood(width/2, 120));
+  db.add(new DBad(width/2, -5));
 }
 
 void draw() {
   
 //Harry Potter level
-if(HarryPotterGame == true && HungerGamesGame == false){  
+if(HarryPotterGame == true){  
   //background and score/lives keeper
   background(0);
   textSize(30);
@@ -92,10 +101,17 @@ if(HarryPotterGame == true && HungerGamesGame == false){
     //display the player
     p1.display();
     p1.update(); 
+    if(score >= scorelimit) {
+      score = 0;
+      HarryPotterGame = false;
+      DivergentGame = true;
+    }
    }
+
+   
    
 //Hunger Games level
-if(HungerGamesGame == true && HarryPotterGame == false){  
+if(HungerGamesGame == true){  
   //background and score/lives keeper
   background(0);
   textSize(30);
@@ -149,12 +165,70 @@ if(HungerGamesGame == true && HarryPotterGame == false){
     p1.display();
     p1.update();
     //method of changing from Hunger Games level to Harry Potter level
-    if(score >= 15) {
+    if(score >= scorelimit) {
       score = 0;
       HarryPotterGame = true;
       HungerGamesGame = false;
     }
    }
- }
+   
+   
+   
+   //Divergent level
+if(DivergentGame == true){  
+  //background and score/lives keeper
+  background(0);
+  textSize(30);
+  fill(255);
+  rect(20, 30, 120, 50);
+  rect(width-140, 30, 120, 50);
+  fill(0);
+  text(score, 70, 65);
+  text(lives, width-90, 65);
+  fill(255,0,0);
+  textSize(20);
+  text("Score", 60, 20);
+  text("Lives", width-100,20);
 
+//timing mechanisms
+  currentTime = millis();
+  changeTime = currentTime-oldTime;
+  if (changeTime > 2000) {
+    oldTime = currentTime;
+    dg.add(new DGood(random(width), -5));
+    db.add(new DBad(random(width), -5));
+  }
+  //method of displaying and dropping objects
+  for (int i = dg.size()-1; i >= 0; i--) {
+    //good class
+    DGood h = dg.get(i);
+    h.display();
+    h.move();
+    if (p1.finddg(h) == true) {
+      dg.remove(i);
+      score++;
+    }
+    if (h.loc.y >= height) {
+      dg.remove(i);
+    }
+  }
+    for (int j = db.size()-1; j >= 0; j--) {
+      //bad class
+      DBad b = db.get(j);
+      b.display();
+      b.move();
+      if (p1.finddb(b) == true) {
+        db.remove(j);
+        lives--;
+      }
+      if (b.loc.y >= height) {
+        db.remove(j);
+      }
+    }
+    //display the player
+    p1.display();
+    p1.update(); 
+   }
+   
+ }
 

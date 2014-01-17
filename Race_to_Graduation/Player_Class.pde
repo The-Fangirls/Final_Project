@@ -1,41 +1,52 @@
 //this will be the code for the player class
 
-class Player {
-  //these are the variables needed to great the player class
-  PVector loc;
-<<<<<<< HEAD
-  PImage harrypotter;
-=======
-  PImage katniss;
->>>>>>> origin/Divergent-Classes
-  int d;
+//class Player {
+//  //these are the variables needed to great the player class
+//  PVector loc;
+//  PImage harrypotter;
+//  int d;
+//
+//  Player() {
+//    loc = new PVector(mouseX, height-d);
+//    harrypotter = loadImage("hpplayer.png");
+//    d = 50;
+//  }
+//
+//  void display() {
+//    fill(255, 0, 0);
+//    image(harrypotter, loc.x ,loc.y, d, d+25);
+//  }
+//
+//  void update() {
+//    loc.set(mouseX, height-d * 2);
+//    image(harrypotter, loc.x, loc.y, d ,d+50);
+// }
+//
+//  void update() {
+//    loc.set(mouseX, height-d*2);
+//  }
 
-  Player() {
-    loc = new PVector(mouseX, height-d);
-<<<<<<< HEAD
-    harrypotter = loadImage("hpplayer.png");
-=======
-    katniss = loadImage("hgplayer.png");
->>>>>>> origin/Divergent-Classes
-    d = 50;
-  }
+ class Player {
+   //these are the variables needed to great the player class
+   PVector loc;
+   PImage katniss;
+   int d;
+ 
+   Player() {
+     loc = new PVector(mouseX, height-d);
+     katniss = loadImage("hgplayer.png");
+     d = 50;
+   }
+ 
+   void display() {
+     fill(255, 0, 0);
+     image(katniss, loc.x, loc.y, d ,d+50);
+   }
+   
+   void update () {
+     loc.set(mouseX, height-d*2);
+   }
 
-  void display() {
-    fill(255, 0, 0);
-<<<<<<< HEAD
-    image(harrypotter, loc.x ,loc.y, d, d+25);
-  }
-
-  void update() {
-    loc.set(mouseX, height-d * 2);
-=======
-    image(katniss, loc.x, loc.y, d ,d+50);
-  }
-
-  void update() {
-    loc.set(mouseX, height-d*2);
->>>>>>> origin/Divergent-Classes
-  }
 
   //this boolean will be able to tell when the player intersects with the good things in the hunger games class
   boolean findhgg(HGGood h) {
@@ -74,22 +85,22 @@ class Player {
       return false;
     }
   }
-//     boolean finddg(DGood h) {
-//    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-//      return true;
-//    }
-//    else {
-//      return false;
-//    }
-//  }
-//   boolean finddb(DBad b) {
-//    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-//      return true;
-//    }
-//    else {
-//      return false;
-//    }
-//  }
+     boolean finddg(DGood h) {
+    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+   boolean finddb(DBad b) {
+    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 //  boolean findmg(MGood h) {
 //    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
 //      return true;
