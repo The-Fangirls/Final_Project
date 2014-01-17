@@ -4,19 +4,23 @@
 boolean HarryPotterGame;
 boolean HungerGamesGame;
 boolean DivergentGame;
+boolean MagnetGame;
 
 //game over booleans
 boolean HPGameOver;
 boolean HGGameOver;
 boolean DGameOver;
+boolean MGameOver;
 
 //game pictures
 PImage HGover;
 PImage HPover;
 PImage Dover;
+PImage Mover;
 PImage HGbackground;
 PImage HPbackground;
 PImage Dbackground;
+PImage Mbackground;
 
 //initializing classes
 Player p1;
@@ -56,7 +60,7 @@ void setup() {
   Dover = loadImage("dgameover.png");
   HGbackground = loadImage("hgbackground.png");
   HPbackground = loadImage("hpbackground.png");
-  Dbackground = loadImage("dbackground.png");
+  Dbackground = loadImage("dbackground2.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
