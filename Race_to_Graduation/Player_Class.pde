@@ -27,7 +27,7 @@
 //  }
 
  class Player {
-   //these are the variables needed to great the player class
+   //these are the variables needed to create the player class
    PVector loc;
    PImage katniss;
    int d;
