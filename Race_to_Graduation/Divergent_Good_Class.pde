@@ -11,7 +11,7 @@ class DGood {
     vel = new PVector (0, random(1,4));
     int r = int(random(1,3));
     dgood = loadImage("dg" + r + ".png");
-    d = 30;
+    d = 40;
   }
   
   void display() {

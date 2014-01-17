@@ -1,10 +1,22 @@
 //This is the code for the game
 
-//booleans
+//game booleans
 boolean HarryPotterGame;
 boolean HungerGamesGame;
 boolean DivergentGame;
 
+//game over booleans
+boolean HPGameOver;
+boolean HGGameOver;
+boolean DGameOver;
+
+//game pictures
+PImage HGover;
+PImage HPover;
+PImage Dover;
+PImage HGbackground;
+PImage HPbackground;
+PImage Dbackground;
 
 //initializing classes
 Player p1;
@@ -25,7 +37,7 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-int scorelimit = 15;
+int scorelimit = 2;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
@@ -34,7 +46,16 @@ void setup() {
   HarryPotterGame = false;
    HungerGamesGame = true;
    DivergentGame = false;
+   HPGameOver = false;
+   HGGameOver = false;
+   DGameOver = false;
   size(600, 600);
+  //pictures
+  HGover = loadImage("hggameover (3).png");
+  HPover = loadImage("hpgameover.png");
+  Dover = loadImage("dgameover.png");
+  HGbackground = loadImage("hgbackground.png");
+  HPbackground = loadImage("hpbackground.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -50,7 +71,7 @@ void draw() {
 //Harry Potter level
 if(HarryPotterGame == true){  
   //background and score/lives keeper
-  background(0);
+  background(HPbackground);
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
@@ -106,6 +127,16 @@ if(HarryPotterGame == true){
       HarryPotterGame = false;
       DivergentGame = true;
     }
+    if(lives <= -1 && HarryPotterGame == true){
+     HPGameOver = true;
+     HarryPotterGame = false; 
+    if(HPGameOver = true){
+     imageMode(CORNER);
+     image(HPover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("The battle of Hogwarts has been lost." , width/2, height/2);  
+    }    
+  }
    }
 
    
@@ -113,7 +144,7 @@ if(HarryPotterGame == true){
 //Hunger Games level
 if(HungerGamesGame == true){  
   //background and score/lives keeper
-  background(0);
+  background(HGbackground);
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
@@ -169,6 +200,16 @@ if(HungerGamesGame == true){
       score = 0;
       HarryPotterGame = true;
       HungerGamesGame = false;
+    }
+    if(lives <= -1 && HungerGamesGame == true){
+     HGGameOver = true;
+     HungerGamesGame = false;
+    if(HGGameOver = true){
+     imageMode(CORNER);
+     image(HGover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("You have lost the Hunger Games." , width/2, height/2);  
+     }
     }
    }
    
@@ -229,6 +270,15 @@ if(DivergentGame == true){
     p1.display();
     p1.update(); 
    }
-   
+  if(lives <= -1 && DivergentGame == true){
+     DGameOver = true;
+     DivergentGame = false;
+    if(DGameOver = true){
+     imageMode(CORNER);
+     image(Dover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("The city has been lost to Jeanine.", width/2, height/2);   
+     }
+    } 
  }
 
