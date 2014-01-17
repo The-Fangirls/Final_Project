@@ -7,9 +7,10 @@ boolean HungerGamesGame;
 
 //initializing classes
 Player p1;
+//Harry Potter
 ArrayList<HPGood> hpg = new ArrayList<HPGood>();
 ArrayList<HPBad> hpb = new ArrayList<HPBad>();
-
+//Hunger Games
 ArrayList<HGGood> hgg = new ArrayList<HGGood>();
 ArrayList<HGBad> hgb = new ArrayList<HGBad>();
 
@@ -23,8 +24,8 @@ int lives = 3;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
-   HarryPotterGame = false;
-   HungerGamesGame = true;
+   HarryPotterGame = true;
+   HungerGamesGame = false;
   size(600, 600);
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -50,7 +51,6 @@ if(HarryPotterGame == true && HungerGamesGame == false){
   textSize(20);
   text("Score", 60, 20);
   text("Lives", width-100,20);
-
 
 //timing mechanisms
   currentTime = millis();
@@ -89,7 +89,7 @@ if(HarryPotterGame == true && HungerGamesGame == false){
     p1.update(); 
    }
 
-if(HungerGamesGame == true){  
+if(HungerGamesGame == true && HarryPotterGame == false){  
   background(0);
   textSize(30);
   fill(255);
@@ -122,7 +122,7 @@ if(HungerGamesGame == true){
       score++;
     }
     if (h.loc.y >= height) {
-      hpg.remove(i);
+      hgg.remove(i);
     }
   }
     for (int j = hgb.size()-1; j >= 0; j--) {
