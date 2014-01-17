@@ -23,5 +23,6 @@ class MBad {
   void move() {
     loc.add(vel);
   }
+  
 }
 
