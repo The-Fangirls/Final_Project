@@ -3,18 +3,18 @@
 class Player {
   //these are the variables needed to great the player class
   PVector loc;
-  PImage harrypotter;
+  PImage katniss;
   int d;
 
   Player() {
     loc = new PVector(mouseX, height-d);
-    harrypotter = loadImage("hpplayer.png");
+    katniss = loadImage("hgplayer.png");
     d = 50;
   }
 
   void display() {
     fill(255, 0, 0);
-    image(harrypotter, loc.x ,loc.y, d, d+25);
+    image(katniss, loc.x ,loc.y, d, d+50);
   }
 
   void update() {
@@ -58,40 +58,6 @@ class Player {
       return false;
     }
   }
-  
-   boolean finddg(DGood h) {
-    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-   boolean finddb(DBad b) {
-    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-  boolean findmg(MGood h) {
-    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-    boolean findmb(MBad b) {
-    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-  
   
 }
 
