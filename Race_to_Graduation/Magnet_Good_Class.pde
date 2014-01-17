@@ -1,6 +1,5 @@
 //this is a class for the good things on the Magnet Level
 
-
 class MGood {
   PVector loc, vel;
   PImage hggood;
