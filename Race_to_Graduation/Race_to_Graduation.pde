@@ -51,11 +51,12 @@ void setup() {
    DGameOver = false;
   size(600, 600);
   //pictures
-  HGover = loadImage("hggameover (3).png");
+  HGover = loadImage("hggameover.png");
   HPover = loadImage("hpgameover.png");
   Dover = loadImage("dgameover.png");
   HGbackground = loadImage("hgbackground.png");
   HPbackground = loadImage("hpbackground.png");
+  Dbackground = loadImage("dbackground.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -218,7 +219,7 @@ if(HungerGamesGame == true){
    //Divergent level
 if(DivergentGame == true){  
   //background and score/lives keeper
-  background(0);
+  background(Dbackground);
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
