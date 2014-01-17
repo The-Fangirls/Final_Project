@@ -33,10 +33,13 @@ ArrayList<HGBad> hgb = new ArrayList<HGBad>();
 //Divergent
 ArrayList<DGood> dg = new ArrayList<DGood>();
 ArrayList<DBad> db = new ArrayList<DBad>();
+<<<<<<< HEAD
 //Magnet
 ArrayList<MGood> mg = new ArrayList<MGood>();
 ArrayList<MBad> mb = new ArrayList<MBad>();
 
+=======
+>>>>>>> origin/Harry-Potter-Classes
 
 //timing mechanisms
 int currentTime = 0;
@@ -54,11 +57,17 @@ void setup() {
   HarryPotterGame = false;
    HungerGamesGame = true;
    DivergentGame = false;
+<<<<<<< HEAD
    MagnetGame = false;
    HPGameOver = false;
    HGGameOver = false;
    DGameOver = false;
    MGameOver = false;
+=======
+   HPGameOver = false;
+   HGGameOver = false;
+   DGameOver = false;
+>>>>>>> origin/Harry-Potter-Classes
   size(600, 600);
   //pictures
   HGover = loadImage("hggameover.png");
@@ -75,8 +84,11 @@ void setup() {
   hgb.add(new HGBad(width/2, -5));
   dg.add(new DGood(width/2, 120));
   db.add(new DBad(width/2, -5));
+<<<<<<< HEAD
   mg.add(new MGood(width/2, 120));
   mb.add(new MBad(width/2, -5));
+=======
+>>>>>>> origin/Harry-Potter-Classes
 }
 
 void draw() {
@@ -85,6 +97,7 @@ void draw() {
 if(HarryPotterGame == true){  
   //background and score/lives keeper
   background(HPbackground);
+<<<<<<< HEAD
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
@@ -156,6 +169,8 @@ if(HarryPotterGame == true){
 if(HungerGamesGame == true){  
   //background and score/lives keeper
   background(HGbackground);
+=======
+>>>>>>> origin/Harry-Potter-Classes
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
@@ -168,6 +183,82 @@ if(HungerGamesGame == true){
   text("Score", 60, 20);
   text("Lives", width-100,20);
 
+<<<<<<< HEAD
+=======
+//timing mechanisms
+  currentTime = millis();
+  changeTime = currentTime-oldTime;
+  if (changeTime > 2000) {
+    oldTime = currentTime;
+    hpg.add(new HPGood(random(width), -5));
+    hpb.add(new HPBad(random(width), -5));
+  }
+  //method of displaying and dropping objects
+  for (int i = hpg.size()-1; i >= 0; i--) {
+    //good class
+    HPGood h = hpg.get(i);
+    h.display();
+    h.move();
+    if (p1.findhpg(h) == true) {
+      hpg.remove(i);
+      score++;
+    }
+    if (h.loc.y >= height) {
+      hpg.remove(i);
+    }
+  }
+    for (int j = hpb.size()-1; j >= 0; j--) {
+      //bad class
+      HPBad b = hpb.get(j);
+      b.display();
+      b.move();
+      if (p1.findhpb(b) == true) {
+        hpb.remove(j);
+        lives--;
+      }
+      if (b.loc.y >= height) {
+        hpb.remove(j);
+      }
+    }
+    //display the player
+    p1.display();
+    p1.update(); 
+    if(score >= scorelimit) {
+      score = 0;
+      HarryPotterGame = false;
+      DivergentGame = true;
+    }
+    if(lives <= -1 && HarryPotterGame == true){
+     HPGameOver = true;
+     HarryPotterGame = false; 
+    if(HPGameOver = true){
+     imageMode(CORNER);
+     image(HPover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("The battle of Hogwarts has been lost." , width/2, height/2);  
+    }    
+  }
+   }
+
+   
+   
+//Hunger Games level
+if(HungerGamesGame == true){  
+  //background and score/lives keeper
+  background(HGbackground);
+  textSize(30);
+  fill(255);
+  rect(20, 30, 120, 50);
+  rect(width-140, 30, 120, 50);
+  fill(0);
+  text(score, 70, 65);
+  text(lives, width-90, 65);
+  fill(255,0,0);
+  textSize(20);
+  text("Score", 60, 20);
+  text("Lives", width-100,20);
+
+>>>>>>> origin/Harry-Potter-Classes
 //timing mechanisms
   currentTime = millis();
   changeTime = currentTime-oldTime;
@@ -241,6 +332,7 @@ if(DivergentGame == true){
   textSize(20);
   text("Score", 60, 20);
   text("Lives", width-100,20);
+<<<<<<< HEAD
 
 //timing mechanisms
   currentTime = millis();
@@ -307,12 +399,15 @@ if(MagnetGame == true){
   textSize(20);
   text("Score", 60, 20);
   text("Lives", width-100,20);
+=======
+>>>>>>> origin/Harry-Potter-Classes
 
 //timing mechanisms
   currentTime = millis();
   changeTime = currentTime-oldTime;
   if (changeTime > 2000) {
     oldTime = currentTime;
+<<<<<<< HEAD
     mg.add(new MGood(random(width), -5));
     mb.add(new MBad(random(width), -5));
   }
@@ -341,10 +436,41 @@ if(MagnetGame == true){
       }
       if (b.loc.y >= height) {
         mb.remove(j);
+=======
+    dg.add(new DGood(random(width), -5));
+    db.add(new DBad(random(width), -5));
+  }
+  //method of displaying and dropping objects
+  for (int i = dg.size()-1; i >= 0; i--) {
+    //good class
+    DGood h = dg.get(i);
+    h.display();
+    h.move();
+    if (p1.finddg(h) == true) {
+      dg.remove(i);
+      score++;
+    }
+    if (h.loc.y >= height) {
+      dg.remove(i);
+    }
+  }
+    for (int j = db.size()-1; j >= 0; j--) {
+      //bad class
+      DBad b = db.get(j);
+      b.display();
+      b.move();
+      if (p1.finddb(b) == true) {
+        db.remove(j);
+        lives--;
+      }
+      if (b.loc.y >= height) {
+        db.remove(j);
+>>>>>>> origin/Harry-Potter-Classes
       }
     }
     //display the player
     p1.display();
+<<<<<<< HEAD
     p1.update();
     //method of changing from Hunger Games level to Harry Potter level
     if(score >= scorelimit) {
@@ -365,5 +491,19 @@ if(MagnetGame == true){
      
     
     
+=======
+    p1.update(); 
+   }
+  if(lives <= -1 && DivergentGame == true){
+     DGameOver = true;
+     DivergentGame = false;
+    if(DGameOver = true){
+     imageMode(CORNER);
+     image(Dover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("The city has been lost to Jeanine.", width/2, height/2);   
+     }
+    } 
+>>>>>>> origin/Harry-Potter-Classes
  }
 
