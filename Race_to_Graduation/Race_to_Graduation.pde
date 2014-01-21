@@ -379,7 +379,9 @@ if(MagnetGame == true){
       if(Mwin == true){
        imageMode(CORNER);
        image(winner,0,0,width, height);
-       
+       textAlign(CENTER);
+       fill(0);
+       text("CONGRATULATIONS, you graduated magnum cum laude!", width/2, 100);
       }
     }
     if(lives <= -1 && MagnetGame == true){
