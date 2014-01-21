@@ -109,6 +109,7 @@ void draw(){
   if(MainInstruction == true){
    background(128,128,255);
   text("Instructions:", 100,100);
+  //general game instructions
   }
    if(mousePressed && MainInstruction == true){
      MainInstruction = false;
@@ -116,6 +117,7 @@ void draw(){
     if(HGInstruction = true){
      background(255,0,0);
     text("Hunger Games", 100,100);
+    //JOY the HG instructions go here
     }
    }
   
@@ -123,8 +125,23 @@ void draw(){
       HGInstruction = false;
      HungerGamesGame = true; 
     } 
-    
-    
+ 
+  if(keyPressed && HPInstruction == true && HungerGamesGame == false){
+       HPInstruction = false;
+      HarryPotterGame = true;
+     } 
+       
+  if(keyPressed && DInstruction == true && HarryPotterGame == false){
+       DInstruction = false;
+      DivergentGame = true;
+     } 
+     
+  if(keyPressed && MInstruction == true && DivergentGame == false){
+       MInstruction = false;
+      MagnetGame = true;
+     } 
+     
+
 
   //Hunger Games level
 if(HungerGamesGame == true){  
@@ -188,10 +205,7 @@ if(HungerGamesGame == true){
       if(HPInstruction == true){
        background(0,0,255);
       text("Harry Potter", 100,100);
-     if(keyPressed){
-       HPInstruction = false;
-      HarryPotterGame = true;
-     } 
+      //JOY the harry potter instructions
       }
     }
     if(lives <= -1 && HungerGamesGame == true){
@@ -267,6 +281,7 @@ if(HarryPotterGame == true){
       if(DInstruction = true){
        background(0);
       text("Divergent", 100, 100); 
+      //JOY the divergent instructions
       }
     }
     if(lives <= -1 && HarryPotterGame == true){
@@ -352,9 +367,14 @@ if(DivergentGame == true) {
   }
    if(score >= scorelimit) {
       score = 0;
-      MagnetGame = true;
+      MInstruction = true;
       DivergentGame = false;
-      }
+  if(MInstruction = true){    
+    background(230,40,230);
+    text("MAGNET",width/2, height/2);
+    //JOY the magnet instructions
+  }
+}
 }
   
   //Magnet level
@@ -416,7 +436,7 @@ if(MagnetGame == true){
     if(score >= scorelimit) {
       MagnetGame = false;
       Mwin = true;
-      if(Mwin == true){
+      if(Mwin == true) {
        imageMode(CORNER);
        image(winner,0,0,width, height);
        textAlign(CENTER);
