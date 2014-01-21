@@ -78,23 +78,23 @@
       return false;
     }
   }
-//  boolean findmg(MGood h) {
-//    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-//      return true;
-//    }
-//    else {
-//      return false;
-//    }
-//  }
-//    boolean findmb(MBad b) {
-//    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-//      return true;
-//    }
-//    else {
-//      return false;
-//    }
-//  }
-//  
+  boolean findmg(MGood h) {
+    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+    boolean findmb(MBad b) {
+    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
+      return true;
+    }
+    else {
+      return false;
+   }
+  }
+  
   
   
 }

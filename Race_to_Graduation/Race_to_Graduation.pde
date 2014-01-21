@@ -18,12 +18,14 @@ boolean HPGameOver;
 boolean HGGameOver;
 boolean DGameOver;
 boolean MGameOver;
+boolean Mwin;
 
 //game over pictures
 PImage HGover;
 PImage HPover;
 PImage Dover;
 PImage Mover;
+PImage winner;
 
 //background
 PImage HGbackground;
@@ -31,11 +33,6 @@ PImage HPbackground;
 PImage Dbackground;
 PImage Mbackground;
 
-//win screen boolean
-boolean Mwin;
-
-//win screen picture
-PImage winner;
 
 //initializing classes
 Player p1;
@@ -108,24 +105,26 @@ void setup() {
 }
 void draw(){
   //instruction screen
+  
   if(MainInstruction == true){
    background(128,128,255);
   text("Instructions:", 100,100);
-   if(mousePressed){
+  }
+   if(mousePressed && MainInstruction == true){
      MainInstruction = false;
     HGInstruction = true;
     if(HGInstruction = true){
      background(255,0,0);
-    text("Hunger Games", 100,100); 
-    }
-    if(keyPressed){
-      HGInstruction = false;
-     HungerGamesGame = true; 
+    text("Hunger Games", 100,100);
     }
    }
-    
-  }
   
+  if(keyPressed && HGInstruction == true && MainInstruction == false){
+      HGInstruction = false;
+     HungerGamesGame = true; 
+    } 
+    
+    
 
   //Hunger Games level
 if(HungerGamesGame == true){  
