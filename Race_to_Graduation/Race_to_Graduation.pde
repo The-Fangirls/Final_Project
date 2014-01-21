@@ -108,9 +108,29 @@ void draw(){
   
   if(MainInstruction == true){
    background(128,128,255);
-  text("Instructions:", 100,100);
+   textSize(28);
+  text("Instructions:", 15,75);
   //general game instructions
-  }
+  text("The object of the game is to catch as many", 10, 110); 
+  text("“good” things as possible,", 10, 135); 
+  text("while avoiding all of the “bad” things.", 10, 160);  
+  text("Use your mouse to move the catcher", 10, 185); 
+  text("across the bottom of the screen", 10, 210); 
+  text("to catch or dodge the falling objects.", 10, 235); 
+  text("You must catch at least 15 “good”", 10, 260); 
+  text("objects in order to move to", 10, 285); 
+  text("the next level.  If three “bad” things", 10, 310); 
+  text("are caught, the game will be over.", 10, 335);  
+  text("Your score will be reset at the", 10, 360); 
+  text("beginning of each level.", 10, 385);  
+  text("“Good” and “Bad” objects will be", 10, 410); 
+  text("specified at the beginning of", 10, 435); 
+  text("each level.  To win the game,", 10, 460); 
+  text("you must beat all four levels.", 10, 485);  
+  text("Good Luck!", 10, 510);  
+  text("Click to Play", 10, 535);
+  
+  } 
    if(mousePressed && MainInstruction == true){
      MainInstruction = false;
     HGInstruction = true;
