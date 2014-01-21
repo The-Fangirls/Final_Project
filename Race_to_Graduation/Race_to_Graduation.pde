@@ -47,6 +47,11 @@ PImage bludger;
 PImage snitch;
 PImage felix;
 PImage hallows;
+PImage jeanine;
+PImage crow;
+PImage syringe;
+PImage four;
+PImage cake;
 
 
 //initializing classes
@@ -119,7 +124,12 @@ void setup() {
   snitch = loadImage("hpg3.png");
   felix = loadImage("hpg2.png");
   hallows = loadImage("hpg1.png");
-  
+  jeanine = loadImage("db2.png");
+  crow=loadImage("db1.png");
+  syringe = loadImage("db3.png");
+  four = loadImage("dg1.png");
+  cake = loadImage("dg2.png");
+
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -278,7 +288,7 @@ void draw() {
           text("Professor Umbridge", 100, 190);
           text("Lord Voldemort", 100, 210);
           text("Bludger", 100, 230);
-          text("Dark Mark", 100,250);
+          text("Dark Mark", 100, 250);
           text("CATCH:", 100, 350);
           text("Golden Snitch", 100, 370);
           text("Felix Felicis", 100, 390);
@@ -365,9 +375,23 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(0);
-        text("Divergent", 100, 100); 
-        //JOY the divergent instructions
+        background(93,31,240);
+        //the divergent instructions
+        text("LEVEL 3: Divergent", 100, 100);
+        textSize(20);
+        text("Tris is the catcher", 100, 130);
+        text("AVOID:", 100, 170);
+        text("Jeanine", 100, 190);
+        text("Crow", 100, 210);
+        text("Syringe", 100, 230);
+        text("CATCH:", 100, 350);
+        text("Tobias/Four", 100, 370);
+        text("Chocolate Cake", 100, 390);
+        image(jeanine, 100, 280);
+        image(crow, 150, 280);
+        image(syringe, 200, 280);
+        image(four, 100, 450);
+        image(cake, 150, 450);
       }
     }
     if (lives <= -1 && HarryPotterGame == true) {
@@ -381,9 +405,6 @@ void draw() {
       }
     }
   }
-
-
-
 
 
   //Divergent level
