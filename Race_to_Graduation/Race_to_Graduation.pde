@@ -212,8 +212,10 @@ if(HungerGamesGame == true){
     if(HGGameOver = true){
      imageMode(CORNER);
      image(HGover, 0, 0, width, height); 
+     textSize(45);
      textAlign(CENTER);
-     text("Another tribute has fallen." , width/2, height/2);  
+     fill(0);
+     text("Another tribute has fallen." , width/2, height-40);  
      }
     }
    }
