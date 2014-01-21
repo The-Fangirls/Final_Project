@@ -52,6 +52,14 @@ PImage crow;
 PImage syringe;
 PImage four;
 PImage cake;
+PImage sansy;
+PImage printer;
+PImage gradeb;
+PImage gradec;
+PImage graded;
+PImage gradef;
+PImage cap;
+PImage gradea;
 
 
 //initializing classes
@@ -129,6 +137,14 @@ void setup() {
   syringe = loadImage("db3.png");
   four = loadImage("dg1.png");
   cake = loadImage("dg2.png");
+  sansy = loadImage("mb6.png");
+  printer = loadImage("mb5.png");
+  gradeb = loadImage("mb1.png");
+  gradec = loadImage("mb2.png");
+  graded = loadImage("mb3.png");
+  gradef = loadImage("mb4.png");
+  cap = loadImage("mg1.png");
+  gradea = loadImage("mg2.png");
 
   //adding objects that are part of a class
   p1 = new Player(); 
@@ -375,7 +391,7 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(93,31,240);
+        background(93, 31, 240);
         //the divergent instructions
         text("LEVEL 3: Divergent", 100, 100);
         textSize(20);
@@ -477,9 +493,26 @@ void draw() {
       MInstruction = true;
       DivergentGame = false;
       if (MInstruction = true) {    
-        background(230, 40, 230);
-        text("MAGNET", width/2, height/2);
-        //JOY the magnet instructions
+        background(133,187,252);
+        // the magnet instructions
+        text("LEVEL 4: MAGNET", 100, 100);
+        textSize(20);
+        text("We are the catcher", 100, 130);
+        text("AVOID:", 100, 170);
+        text("A Disappointed Mr. Sanservino", 100, 190);
+        text("Printer", 100, 210);
+        text("B's, C's, D's, and F's", 100, 230);
+        text("CATCH:", 100, 350);
+        text("Graduation Cap and Diploma", 100, 370);
+        text("A's", 100, 390);
+        image(sansy, 100, 280);
+        image(printer, 150, 280);
+        image(gradeb, 200, 280);
+        image(gradec, 250, 280);
+        image(graded, 300, 280);
+        image(gradef, 350, 280);
+        image(cap, 100, 450);
+        image(gradea, 150, 450);
       }
     }
   }
