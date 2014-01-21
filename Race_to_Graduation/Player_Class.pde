@@ -30,17 +30,33 @@
    //these are the variables needed to create the player class
    PVector loc;
    PImage katniss;
+   PImage harry;
+   PImage tris;
+   PImage fangirls;
    int d;
  
    Player() {
      loc = new PVector(mouseX, height-d);
      katniss = loadImage("hgplayer.png");
+     harry = loadImage("hpplayer.png");
+     tris = loadImage("dplayer.png");
+//     fangirls = loadImage("mplayer.png");
      d = 50;
    }
  
    void display() {
-     fill(255, 0, 0);
+     if(HungerGamesGame == true) {
      image(katniss, loc.x, loc.y, d ,d+50);
+     }
+     if(HarryPotterGame == true) {
+      image(harry, loc.x, loc.y, d+30 ,d+50);
+     }
+     if(DivergentGame == true) {
+       image(tris, loc.x, loc.y, d+55 ,d+70);
+     }
+//     if(MagnetGame == true) {
+//       image(fangirls, loc.x, loc.y, d ,d+50);
+//     }
    }
    
    void update () {
