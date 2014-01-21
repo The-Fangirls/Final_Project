@@ -213,7 +213,7 @@ if(HungerGamesGame == true){
      imageMode(CORNER);
      image(HGover, 0, 0, width, height); 
      textAlign(CENTER);
-     text("You have lost the Hunger Games." , width/2, height/2);  
+     text("Another tribute has fallen." , width/2, height/2);  
      }
     }
    }
@@ -282,7 +282,7 @@ if(DivergentGame == true){
      imageMode(CORNER);
      image(Dover, 0, 0, width, height); 
      textAlign(CENTER);
-     text("The city has been lost to Jeanine.", width/2, height/2);   
+     text("You have fallen victim to the serum and are now controlled by the Erudite", width/2, height/2);   
      }
     } 
  }
