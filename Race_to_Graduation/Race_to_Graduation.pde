@@ -30,6 +30,12 @@ PImage HPbackground;
 PImage Dbackground;
 PImage Mbackground;
 
+//win screen boolean
+boolean Mwin;
+
+//win screen picture
+PImage winner;
+
 //initializing classes
 Player p1;
 //Harry Potter
@@ -67,6 +73,8 @@ void setup() {
    HGGameOver = false;
    DGameOver = false;
    MGameOver = false;
+   
+   Mwin = false;
 
   size(600, 600);
   //pictures
@@ -78,6 +86,7 @@ void setup() {
   HPbackground = loadImage("hpbackground.png");
   Dbackground = loadImage("dbackground2.png");
   Mbackground = loadImage("mbackground2.png");
+  winner = loadImage("graduation.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -365,8 +374,13 @@ if(MagnetGame == true){
     p1.update();
     //method of changing levels
     if(score >= scorelimit) {
-      MagnetGame == false;
-      //win screen here
+      MagnetGame = false;
+      Mwin = true;
+      if(Mwin == true){
+       imageMode(CORNER);
+       image(winner,0,0,width, height);
+       
+      }
     }
     if(lives <= -1 && MagnetGame == true){
      MGameOver = true;
