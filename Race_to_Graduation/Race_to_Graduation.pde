@@ -116,7 +116,77 @@ void draw(){
    } 
   }
   
-  
+  //Hunger Games level
+if(HungerGamesGame == true){  
+  //background and score/lives keeper
+  background(HGbackground);
+  textSize(30);
+  fill(255);
+  rect(20, 30, 120, 50);
+  rect(width-140, 30, 120, 50);
+  fill(0);
+  text(score, 70, 65);
+  text(lives, width-90, 65);
+  fill(255,0,0);
+  textSize(20);
+  text("Score", 60, 20);
+  text("Lives", width-100,20);
+
+//timing mechanisms
+  currentTime = millis();
+  changeTime = currentTime-oldTime;
+  if (changeTime > 2000) {
+    oldTime = currentTime;
+    hgg.add(new HGGood(random(width), -5));
+    hgb.add(new HGBad(random(width), -5));
+  }
+  //method of displaying and dropping obejcts
+  for (int i = hgg.size()-1; i >= 0; i--) {
+    //good objects
+    HGGood h = hgg.get(i);
+    h.display();
+    h.move();
+    if (p1.findhgg(h) == true) {
+      hgg.remove(i);
+      score++;
+    }
+    if (h.loc.y >= height) {
+      hgg.remove(i);
+    }
+  }
+    for (int j = hgb.size()-1; j >= 0; j--) {
+      //bad objects
+      HGBad b = hgb.get(j);
+      b.display();
+      b.move();
+      if (p1.findhgb(b) == true) {
+        hgb.remove(j);
+        lives--;
+      }
+      if (b.loc.y >= height) {
+        hgb.remove(j);
+      }
+    }
+    //display the player
+    p1.display();
+    p1.update();
+    //method of changing from Hunger Games level to Harry Potter level
+    if(score >= scorelimit) {
+      score = 0;
+      HarryPotterGame = true;
+      HungerGamesGame = false;
+    }
+    if(lives <= -1 && HungerGamesGame == true){
+     HGGameOver = true;
+     HungerGamesGame = false;
+    if(HGGameOver = true){
+     imageMode(CORNER);
+     image(HGover, 0, 0, width, height); 
+     textAlign(CENTER);
+     text("You have lost the Hunger Games." , width/2, height/2);  
+     }
+    }
+   }
   
   //Harry Potter level
 if(HarryPotterGame == true){  
@@ -189,77 +259,7 @@ if(HarryPotterGame == true){
   }
    }
    
-//Hunger Games level
-if(HungerGamesGame == true){  
-  //background and score/lives keeper
-  background(HGbackground);
-  textSize(30);
-  fill(255);
-  rect(20, 30, 120, 50);
-  rect(width-140, 30, 120, 50);
-  fill(0);
-  text(score, 70, 65);
-  text(lives, width-90, 65);
-  fill(255,0,0);
-  textSize(20);
-  text("Score", 60, 20);
-  text("Lives", width-100,20);
 
-//timing mechanisms
-  currentTime = millis();
-  changeTime = currentTime-oldTime;
-  if (changeTime > 2000) {
-    oldTime = currentTime;
-    hgg.add(new HGGood(random(width), -5));
-    hgb.add(new HGBad(random(width), -5));
-  }
-  //method of displaying and dropping obejcts
-  for (int i = hgg.size()-1; i >= 0; i--) {
-    //good objects
-    HGGood h = hgg.get(i);
-    h.display();
-    h.move();
-    if (p1.findhgg(h) == true) {
-      hgg.remove(i);
-      score++;
-    }
-    if (h.loc.y >= height) {
-      hgg.remove(i);
-    }
-  }
-    for (int j = hgb.size()-1; j >= 0; j--) {
-      //bad objects
-      HGBad b = hgb.get(j);
-      b.display();
-      b.move();
-      if (p1.findhgb(b) == true) {
-        hgb.remove(j);
-        lives--;
-      }
-      if (b.loc.y >= height) {
-        hgb.remove(j);
-      }
-    }
-    //display the player
-    p1.display();
-    p1.update();
-    //method of changing from Hunger Games level to Harry Potter level
-    if(score >= scorelimit) {
-      score = 0;
-      HarryPotterGame = true;
-      HungerGamesGame = false;
-    }
-    if(lives <= -1 && HungerGamesGame == true){
-     HGGameOver = true;
-     HungerGamesGame = false;
-    if(HGGameOver = true){
-     imageMode(CORNER);
-     image(HGover, 0, 0, width, height); 
-     textAlign(CENTER);
-     text("You have lost the Hunger Games." , width/2, height/2);  
-     }
-    }
-   }
    
    
    
