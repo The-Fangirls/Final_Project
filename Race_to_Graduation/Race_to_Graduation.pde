@@ -6,13 +6,19 @@ boolean HungerGamesGame;
 boolean DivergentGame;
 boolean MagnetGame;
 
+//instructions
+boolean HPInstruction;
+boolean HGInstruction;
+boolean DInstruction;
+boolean MInstruction;
+
 //game over booleans
 boolean HPGameOver;
 boolean HGGameOver;
 boolean DGameOver;
 boolean MGameOver;
 
-//game pictures
+//game over pictures
 PImage HGover;
 PImage HPover;
 PImage Dover;
@@ -46,13 +52,13 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-int scorelimit = 2;
+int scorelimit = 4;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
   imageMode(CENTER);
   //creating innitial values of booleans 
-  HarryPotterGame = false;
+   HarryPotterGame = false;
    HungerGamesGame = true;
    DivergentGame = false;
    MagnetGame = false;
@@ -156,79 +162,6 @@ if(HarryPotterGame == true){
   }
    }
    
-//Hunger Games level
-if(HungerGamesGame == true){  
-  //background and score/lives keeper
-  background(HGbackground);
-  textSize(30);
-  fill(255);
-  rect(20, 30, 120, 50);
-  rect(width-140, 30, 120, 50);
-  fill(0);
-  text(score, 70, 65);
-  text(lives, width-90, 65);
-  fill(255,0,0);
-  textSize(20);
-  text("Score", 60, 20);
-  text("Lives", width-100,20);
-
-
-//timing mechanisms
-  currentTime = millis();
-  changeTime = currentTime-oldTime;
-  if (changeTime > 2000) {
-    oldTime = currentTime;
-    hpg.add(new HPGood(random(width), -5));
-    hpb.add(new HPBad(random(width), -5));
-  }
-  //method of displaying and dropping objects
-  for (int i = hpg.size()-1; i >= 0; i--) {
-    //good class
-    HPGood h = hpg.get(i);
-    h.display();
-    h.move();
-    if (p1.findhpg(h) == true) {
-      hpg.remove(i);
-      score++;
-    }
-    if (h.loc.y >= height) {
-      hpg.remove(i);
-    }
-  }
-    for (int j = hpb.size()-1; j >= 0; j--) {
-      //bad class
-      HPBad b = hpb.get(j);
-      b.display();
-      b.move();
-      if (p1.findhpb(b) == true) {
-        hpb.remove(j);
-        lives--;
-      }
-      if (b.loc.y >= height) {
-        hpb.remove(j);
-      }
-    }
-    //display the player
-    p1.display();
-    p1.update(); 
-    if(score >= scorelimit) {
-      score = 0;
-      HarryPotterGame = false;
-      DivergentGame = true;
-    }
-    if(lives <= -1 && HarryPotterGame == true){
-     HPGameOver = true;
-     HarryPotterGame = false; 
-    if(HPGameOver = true){
-     imageMode(CORNER);
-     image(HPover, 0, 0, width, height); 
-     textAlign(CENTER);
-     text("The battle of Hogwarts has been lost." , width/2, height/2);  
-    }    
-  }
-   }
-
-
 //Hunger Games level
 if(HungerGamesGame == true){  
   //background and score/lives keeper
@@ -432,9 +365,8 @@ if(MagnetGame == true){
     p1.update();
     //method of changing levels
     if(score >= scorelimit) {
-      score = 0;
-      MagnetGame = true;
-      DivergentGame = false;
+      MagnetGame == false;
+      //win screen here
     }
     if(lives <= -1 && MagnetGame == true){
      MGameOver = true;
