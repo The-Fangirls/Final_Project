@@ -67,9 +67,11 @@ void setup() {
   HGover = loadImage("hggameover.png");
   HPover = loadImage("hpgameover.png");
   Dover = loadImage("dgameover.png");
+  Mover = loadImage("mgameover.png");
   HGbackground = loadImage("hgbackground.png");
   HPbackground = loadImage("hpbackground.png");
   Dbackground = loadImage("dbackground2.png");
+  Mbackground = loadImage("mbackground2.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -376,7 +378,7 @@ if(DivergentGame == true) {
   //Magnet level
 if(MagnetGame == true){  
   //background and score/lives keeper
-  background(0);
+  background(Mbackground);
   textSize(30);
   fill(255);
   rect(20, 30, 120, 50);
@@ -438,11 +440,13 @@ if(MagnetGame == true){
      MGameOver = true;
        MagnetGame = false;
     if(MGameOver = true){
-     background(89,88,111);
+     imageMode(CORNER);
+     background(Mover);
      textAlign(CENTER);
      text("Sorry, you didn't make it to graduation.", width/2, height/2);  
      }
     }
   }
  }
+ 
 
