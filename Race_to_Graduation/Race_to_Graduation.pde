@@ -67,7 +67,7 @@ void setup() {
   HGover = loadImage("hggameover.png");
   HPover = loadImage("hpgameover.png");
   Dover = loadImage("dgameover.png");
-  Mover = loadImage("mgameover.png");
+  Mover = loadImage("mggameover2.png");
   HGbackground = loadImage("hgbackground.png");
   HPbackground = loadImage("hpbackground.png");
   Dbackground = loadImage("dbackground2.png");
