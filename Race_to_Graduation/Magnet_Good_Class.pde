@@ -4,6 +4,7 @@ class MGood {
   PVector loc, vel;
   PImage mgood;
   int d;
+
   
   MGood(float x, float y) {
     loc = new PVector (x, y);

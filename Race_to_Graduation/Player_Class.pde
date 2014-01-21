@@ -3,7 +3,11 @@
    //these are the variables needed to create the player class
    PVector loc;
    PImage katniss;
+   PImage harrypotter;
+   PImage tris;
+   PImage fangirls;
    int d;
+ 
  
    Player() {
      loc = new PVector(mouseX, height-d);
