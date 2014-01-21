@@ -33,6 +33,14 @@ PImage HPbackground;
 PImage Dbackground;
 PImage Mbackground;
 
+//Images for Instructions
+PImage snow;
+PImage rose;
+PImage tracker;
+PImage prim;
+PImage bow;
+PImage pin;
+
 
 //initializing classes
 Player p1;
@@ -91,6 +99,12 @@ void setup() {
   Dbackground = loadImage("dbackground2.png");
   Mbackground = loadImage("mbackground2.png");
   winner = loadImage("graduation.png");
+  snow = loadImage("hgb1.png");
+  rose = loadImage("hgb3.png");
+  tracker = loadImage("hgb2.png");
+  prim = loadImage("hgg2.png");
+  pin = loadImage("hgg3.png");
+  bow = loadImage("hgg1.png");
   //adding objects that are part of a class
   p1 = new Player(); 
   hpg.add(new HPGood(width/2, 120));
@@ -136,11 +150,26 @@ void draw(){
     HGInstruction = true;
     if(HGInstruction = true){
      background(255,0,0);
-    text("Hunger Games", 100,100);
-    //JOY the HG instructions go here
+    text("LEVEL 1: Hunger Games", 100,100);
+    textSize(20);
+    text("Katniss is the catcher", 100, 130);
+    text("AVOID:", 100, 170);
+    text("President Snow", 100, 190);
+    text("Roses", 100, 210);
+    text("Tracker Jackers", 100, 230);
+    text("CATCH:", 100, 350);
+    text("Prim", 100, 370);
+    text("Mockingjay Pin", 100, 390);
+    text("Bow and Arrow", 100, 410);
+    image(snow, 100, 270);
+    image(rose, 150, 270);
+    image(tracker, 200, 270);
+    image(prim, 100, 450);
+    image(pin, 150, 450);
+    image(bow, 200, 450);
     }
    }
-  
+  //JOY
   if(keyPressed && HGInstruction == true && MainInstruction == false){
       HGInstruction = false;
      HungerGamesGame = true; 
