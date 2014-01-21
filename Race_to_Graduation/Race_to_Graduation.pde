@@ -112,10 +112,21 @@ void draw(){
    background(128,128,255);
   text("Instructions:", 100,100);
    if(mousePressed){
-    HungerGamesGame = true;
-   } 
+     MainInstruction = false;
+    HGInstruction = true;
+    if(HGInstruction = true){
+     background(255,0,0);
+    text("Hunger Games", 100,100); 
+    }
+    if(keyPressed){
+      HGInstruction = false;
+     HungerGamesGame = true; 
+    }
+   }
+    
   }
   
+
   //Hunger Games level
 if(HungerGamesGame == true){  
   //background and score/lives keeper
@@ -173,8 +184,16 @@ if(HungerGamesGame == true){
     //method of changing from Hunger Games level to Harry Potter level
     if(score >= scorelimit) {
       score = 0;
-      HarryPotterGame = true;
       HungerGamesGame = false;
+      HPInstruction = true;
+      if(HPInstruction == true){
+       background(0,0,255);
+      text("Harry Potter", 100,100);
+     if(keyPressed){
+       HPInstruction = false;
+      HarryPotterGame = true;
+     } 
+      }
     }
     if(lives <= -1 && HungerGamesGame == true){
      HGGameOver = true;
@@ -245,7 +264,11 @@ if(HarryPotterGame == true){
     if(score >= scorelimit) {
       score = 0;
       HarryPotterGame = false;
-      DivergentGame = true;
+      DInstruction = true;
+      if(DInstruction = true){
+       background(0);
+      text("Divergent", 100, 100); 
+      }
     }
     if(lives <= -1 && HarryPotterGame == true){
      HPGameOver = true;
