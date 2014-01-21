@@ -7,6 +7,7 @@ boolean DivergentGame;
 boolean MagnetGame;
 
 //instructions
+boolean MainInstruction;
 boolean HPInstruction;
 boolean HGInstruction;
 boolean DInstruction;
@@ -63,9 +64,9 @@ int scorelimit = 4;
 //these are the things that we want to happen only once at the start of the game
 void setup() {
   imageMode(CENTER);
-  //creating innitial values of booleans 
+  //creating initial values of booleans 
    HarryPotterGame = false;
-   HungerGamesGame = true;
+   HungerGamesGame = false;
    DivergentGame = false;
    MagnetGame = false;
    
@@ -73,6 +74,12 @@ void setup() {
    HGGameOver = false;
    DGameOver = false;
    MGameOver = false;
+   
+   MainInstruction = true;
+   HGInstruction = false;
+   HPInstruction = false;
+   DInstruction = false;
+   MInstruction = false;
    
    Mwin = false;
 
@@ -100,6 +107,17 @@ void setup() {
 
 }
 void draw(){
+  //instruction screen
+  if(MainInstruction == true){
+   background(128,128,255);
+  text("Instructions:", 100,100);
+   if(mousePressed){
+    HungerGamesGame = true;
+   } 
+  }
+  
+  
+  
   //Harry Potter level
 if(HarryPotterGame == true){  
   //background and score/lives keeper
