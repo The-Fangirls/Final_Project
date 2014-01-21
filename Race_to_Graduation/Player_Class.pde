@@ -1,30 +1,3 @@
-//this will be the code for the player class
-
-//class Player {
-//  //these are the variables needed to great the player class
-//  PVector loc;
-//  PImage harrypotter;
-//  int d;
-//
-//  Player() {
-//    loc = new PVector(mouseX, height-d);
-//    harrypotter = loadImage("hpplayer.png");
-//    d = 50;
-//  }
-//
-//  void display() {
-//    fill(255, 0, 0);
-//    image(harrypotter, loc.x ,loc.y, d, d+25);
-//  }
-//
-//  void update() {
-//    loc.set(mouseX, height-d * 2);
-//    image(harrypotter, loc.x, loc.y, d ,d+50);
-// }
-//
-//  void update() {
-//    loc.set(mouseX, height-d*2);
-//  }
 
  class Player {
    //these are the variables needed to create the player class
@@ -101,21 +74,24 @@
       return false;
     }
   }
-  boolean findmg(MGood h) {
-    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-    boolean findmb(MBad b) {
-    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-      return true;
-    }
-    else {
-      return false;
-    }
-    }
+//  boolean findmg(MGood h) {
+//    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
+//      return true;
+//    }
+//    else {
+//      return false;
+//    }
+//  }
+//    boolean findmb(MBad b) {
+//    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
+//      return true;
+//    }
+//    else {
+//      return false;
+//    }
+//  }
+//  
+  
+  
 }
 
