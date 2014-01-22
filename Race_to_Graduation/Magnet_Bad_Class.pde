@@ -9,7 +9,7 @@ class MBad {
   MBad(float x, float y) {
     loc = new PVector (x, y);
     vel = new PVector (0, random(1, 4));
-    int r = int(random(1, 6));
+    int r = int(random(1, 7));
     mbad = loadImage("mb" + r + ".png");
     d = 30;
   }
