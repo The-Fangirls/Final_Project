@@ -28,9 +28,9 @@
      if(DivergentGame == true) {
        image(tris, loc.x, loc.y, d+55 ,d+70);
      }
-//     if(MagnetGame == true) {
-//      image(fangirls, loc.x, loc.y, d ,d+50);    
-//    }
+     if(MagnetGame == true) {
+      image(fangirls, loc.x, loc.y, d+90 ,d+60);    
+    }
      
    }
    
