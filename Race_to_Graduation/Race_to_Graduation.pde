@@ -394,8 +394,10 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(93, 31, 240);
+        background(108,103,96);
         //the divergent instructions
+        textAlign(CORNER);
+        fill(37,138,191);
         text("LEVEL 3: Divergent", 100, 100);
         textSize(20);
         text("Tris is the catcher", 100, 130);
@@ -406,11 +408,13 @@ void draw() {
         text("CATCH:", 100, 350);
         text("Tobias/Four", 100, 370);
         text("Chocolate Cake", 100, 390);
-        image(jeanine, 100, 280);
-        image(crow, 150, 280);
-        image(syringe, 200, 280);
-        image(four, 100, 450);
-        image(cake, 150, 450);
+        image(jeanine, 100, 280,50,50);
+        image(crow, 200, 280,50,50);
+        image(syringe, 300, 280,50,50);
+        image(four, 100, 450,50,50);
+        image(cake, 200, 450,50,50);
+        textAlign(CENTER);
+        text("Press any key to begin", width/2, 575);
       }
     }
     if (lives <= -1 && HarryPotterGame == true) {
@@ -498,6 +502,8 @@ void draw() {
       if (MInstruction = true) {    
         background(133,187,252);
         // the magnet instructions
+        textAlign(CORNER);
+        fill(9,49,70);
         text("LEVEL 4: MAGNET", 100, 100);
         textSize(20);
         text("We are the catcher", 100, 130);
@@ -508,14 +514,16 @@ void draw() {
         text("CATCH:", 100, 350);
         text("Graduation Cap and Diploma", 100, 370);
         text("A's", 100, 390);
-        image(sansy, 100, 280);
-        image(printer, 150, 280);
-        image(gradeb, 200, 280);
-        image(gradec, 250, 280);
-        image(graded, 300, 280);
-        image(gradef, 350, 280);
-        image(cap, 100, 450);
-        image(gradea, 150, 450);
+        image(sansy, 100, 280,50,75);
+        image(printer, 200, 280,50,50);
+        image(gradeb, 300, 280,50,50);
+        image(gradec, 375, 280,50,50);
+        image(graded, 450, 280,50,50);
+        image(gradef, 5250, 280,50,50);
+        image(cap, 100, 450,50,50);
+        image(gradea, 200, 450,50,50);
+        textAlign(CENTER);
+        text("Press any key to begin", width/2, 575);
       }
     }
   }
