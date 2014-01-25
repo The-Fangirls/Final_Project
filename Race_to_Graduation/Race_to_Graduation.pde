@@ -208,30 +208,6 @@ void draw() {
     }
   }
 
-  if (keyPressed && HGInstruction == true && MainInstruction == false) {
-    HGInstruction = false;
-    HungerGamesGame = true;
-  }
-
-
-  if (keyPressed && HPInstruction == true && HungerGamesGame == false) {
-    HPInstruction = false;
-    HarryPotterGame = true;
-  }
-
-  if (keyPressed && DInstruction == true && HarryPotterGame == false) {
-    DInstruction = false;
-    DivergentGame = true;
-  } 
-
-
-  if (keyPressed && MInstruction == true && DivergentGame == false) {
-    MInstruction = false;
-    MagnetGame = true;
-  } 
-
-
-
   //Hunger Games level
   if (HungerGamesGame == true) {  
     //background and score/lives keeper
@@ -614,3 +590,27 @@ void draw() {
     }
 }
 
+void keyPressed() {
+    if (HGInstruction == true && MainInstruction == false) {
+    HGInstruction = false;
+    HungerGamesGame = true;
+  }
+
+
+  if (HPInstruction == true && HungerGamesGame == false) {
+    HPInstruction = false;
+    HarryPotterGame = true;
+  }
+
+  if (DInstruction == true && HarryPotterGame == false) {
+    DInstruction = false;
+    DivergentGame = true;
+  } 
+
+
+  if (MInstruction == true && DivergentGame == false) {
+    MInstruction = false;
+    MagnetGame = true;
+  } 
+}
+  
