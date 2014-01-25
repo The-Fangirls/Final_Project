@@ -20,12 +20,6 @@ boolean DGameOver;
 boolean MGameOver;
 boolean Mwin;
 
-//instruction pictures
-PImage hpInstruction;
-PImage hgInstruction;
-PImage dInstruction;
-PImage mInstruction;
-
 //game over pictures
 PImage HGover;
 PImage HPover;
@@ -131,11 +125,6 @@ void setup() {
   Dbackground = loadImage("dbackground2.png");
   Mbackground = loadImage("mbackground2.png");
   
-  hgInstruction = loadImage("hginstructions.png");
-  hpInstruction = loadImage("hpinstructions.png");
-  dInstruction = loadImage("dinstructions2.png");
-  mInstruction = loadImage("minstructions.png");
-  
   winner = loadImage("graduation.png");
   snow = loadImage("hgb1.png");
   rose = loadImage("hgb3.png");
@@ -201,7 +190,7 @@ void draw() {
     HGInstruction = true;
     
     if (HGInstruction = true) {
-      background(hgInstruction);
+      background(0);
       textAlign(CORNER);
       fill(24,18,29);
       text("LEVEL 1: Hunger Games", 100, 100);
@@ -287,7 +276,7 @@ void draw() {
       HungerGamesGame = false;
       HPInstruction = true;
       if (HPInstruction == true) {
-          background(hpInstruction);
+          background(0);
           fill(254,241,200);
           text("LEVEL 2: Harry Potter", 100, 80);
           textSize(20);
@@ -330,7 +319,7 @@ void draw() {
   //Harry Potter level
   if (HarryPotterGame == true) {  
     //background and score/lives keeper
-    background(HPbackground);
+    background(0);
     textSize(30);
     fill(255);
     rect(20, 30, 120, 50);
@@ -387,7 +376,7 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(dInstruction);
+        background(0);
         //the divergent instructions
         textAlign(CORNER);
         fill(237,238,241);
@@ -429,7 +418,7 @@ void draw() {
   //Divergent level
   if (DivergentGame == true) {  
     //background and score/lives keeper
-    background(Dbackground);
+    background(0);
     textSize(30);
     fill(255);
     rect(20, 30, 120, 50);
