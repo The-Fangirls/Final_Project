@@ -18,21 +18,21 @@
  
    Player() {
      //defining the varibales, PVectors, and PImages
-       //setting location from the bottom to the size of HPheight because that is relatively close to the bottom for every level
-         //we also want the player to be the same distance from the bottom for each level
+     //setting location from the bottom to the size of HPheight because all heights are the same
+         //we didn't use just one variable in order to easily change each player individually
      loc = new PVector(mouseX, height-HPheight/2);
      katniss = loadImage("hgplayer.png");
      harry = loadImage("hpplayer.png");
      tris = loadImage("dplayer.png");
      fangirls = loadImage("mplayer.png");
-     HGwidth = 60;
-     HGheight = 110;
-     HPwidth = 90;
-     HPheight = 110;
+     HGwidth = 70;
+     HGheight = 130;
+     HPwidth = 100;
+     HPheight = 130;
      Dwidth = 115;
      Dheight = 130;
-     Mwidth = 150;
-     Mheight = 120;
+     Mwidth = 155;
+     Mheight = 130;
      d = 50;
    }
  
