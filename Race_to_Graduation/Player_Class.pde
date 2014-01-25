@@ -112,9 +112,10 @@
       return false;
     }
   }
+  //because magnet catcher graphic is so much bigger, it must catch based on 1/4 of its height
   //this boolean will be able to tell when the player intersects with the good things in the magnet class
   boolean findmg(MGood h) {
-    if (loc.dist(h.loc) < Mwidth/2 + h.d/2 && loc.dist(h.loc) < Mheight/2 + h.d/2) {
+    if (loc.dist(h.loc) < Mwidth/2 + h.d/2 && loc.dist(h.loc) < Mheight/4 + h.d/2) {
       return true;
     }
     else {
@@ -123,7 +124,7 @@
   }
   //this boolean will be able to tell when the player intersects with the bad things in the magnet class
     boolean findmb(MBad b) {
-    if (loc.dist(b.loc) < Mwidth/2 + b.d/2 && loc.dist(b.loc) < Mheight/2 + b.d/2 ) {
+    if (loc.dist(b.loc) < Mwidth/2 + b.d/2 && loc.dist(b.loc) < Mheight/4 + b.d/2 ) {
       return true;
     }
     else {
