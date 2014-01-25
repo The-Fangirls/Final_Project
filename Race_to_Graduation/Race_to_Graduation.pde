@@ -591,23 +591,22 @@ void draw() {
 }
 
 void keyPressed() {
+  //allows you to start the Hunger Games game
     if (HGInstruction == true && MainInstruction == false) {
     HGInstruction = false;
     HungerGamesGame = true;
   }
-
-
+  //allows you to start the Harry Potter game
   if (HPInstruction == true && HungerGamesGame == false) {
     HPInstruction = false;
     HarryPotterGame = true;
   }
-
+  //allows you to start the Divergent game
   if (DInstruction == true && HarryPotterGame == false) {
     DInstruction = false;
     DivergentGame = true;
   } 
-
-
+  //allows you to start the Magnet game
   if (MInstruction == true && DivergentGame == false) {
     MInstruction = false;
     MagnetGame = true;
