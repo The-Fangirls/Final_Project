@@ -20,6 +20,12 @@ boolean DGameOver;
 boolean MGameOver;
 boolean Mwin;
 
+//instruction pictures
+PImage hpInstruction;
+PImage hgInstruction;
+PImage dInstruction;
+PImage mInstruction;
+
 //game over pictures
 PImage HGover;
 PImage HPover;
@@ -40,6 +46,7 @@ PImage tracker;
 PImage prim;
 PImage bow;
 PImage pin;
+
 PImage umbridge;
 PImage voldemort;
 PImage mark;
@@ -47,11 +54,13 @@ PImage bludger;
 PImage snitch;
 PImage felix;
 PImage hallows;
+
 PImage jeanine;
 PImage crow;
 PImage syringe;
 PImage four;
 PImage cake;
+
 PImage sansy;
 PImage printer;
 PImage gradeb;
@@ -84,7 +93,7 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-int scorelimit = 4;
+int scorelimit = 2;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
@@ -116,10 +125,17 @@ void setup() {
   HPover = loadImage("hpgameover.png");
   Dover = loadImage("dgameover.png");
   Mover = loadImage("mggameover2.png");
+  
   HGbackground = loadImage("hgbackground.png");
   HPbackground = loadImage("hpbackground.png");
   Dbackground = loadImage("dbackground2.png");
   Mbackground = loadImage("mbackground2.png");
+  
+  hgInstruction = loadImage("hginstructions.png");
+  hpInstruction = loadImage("hpinstructions.png");
+  dInstruction = loadImage("dinstructions2.png");
+  mInstruction = loadImage("minstructions.png");
+  
   winner = loadImage("graduation.png");
   snow = loadImage("hgb1.png");
   rose = loadImage("hgb3.png");
@@ -178,14 +194,16 @@ void draw() {
     text("Good Luck!", width/2, 510);  
     text("Click to Play", width/2, 535);
   } 
+
   //this will allow you to get to the hg start the game
   if (mousePressed && MainInstruction == true) {
     MainInstruction = false;
     HGInstruction = true;
+    
     if (HGInstruction = true) {
-      background(0);
+      background(hgInstruction);
       textAlign(CORNER);
-      fill(242,108,29);
+      fill(24,18,29);
       text("LEVEL 1: Hunger Games", 100, 100);
       textSize(20);
       text("Katniss is the catcher", 100, 130);
@@ -269,36 +287,33 @@ void draw() {
       HungerGamesGame = false;
       HPInstruction = true;
       if (HPInstruction == true) {
-        background(134,21,1);
-
-        //the harry potter instructions
-        if (HPInstruction = true) {
-          fill(254,141,5);
-          text("LEVEL 2: Harry Potter", 100, 100);
+          background(hpInstruction);
+          fill(254,241,200);
+          text("LEVEL 2: Harry Potter", 100, 80);
           textSize(20);
-          text("Harry is the catcher", 100, 130);
-          text("AVOID:", 100, 170);
-          text("Professor Umbridge", 100, 190);
-          text("Lord Voldemort", 100, 210);
-          text("Bludger", 100, 230);
-          text("Dark Mark", 100, 250);
-          text("CATCH:", 100, 350);
-          text("Golden Snitch", 100, 370);
-          text("Felix Felicis", 100, 390);
-          text("The Deathly Hallows Symbol", 100, 410);
+          text("Harry is the catcher", 100, 110);
+          text("AVOID:", 100, 160);
+          text("Professor Umbridge", 100, 180);
+          text("Lord Voldemort", 100, 200);
+          text("Bludger", 100, 220);
+          text("Dark Mark", 100, 240);
+          text("CATCH:", 100, 370);
+          text("Golden Snitch", 100, 390);
+          text("Felix Felicis", 100, 410);
+          text("The Deathly Hallows Symbol", 100, 430);
           image(umbridge, 100, 280,50,50);
           image(voldemort, 200, 280,50,50);
           image(bludger, 300, 280,50,50);
           image(mark, 400, 280,50,50);
-          image(snitch, 100, 450,65,65);
-          image(felix,200, 450,50,50);
-          image(hallows, 300, 450,50,50);
+          image(snitch, 100, 500,65,65);
+          image(felix,200, 500,50,50);
+          image(hallows, 300, 500,50,50);
           textAlign(CENTER);
-          text("PRESS ANY KEY TO BEGIN", width/2, 575);
+          text("PRESS ANY KEY TO BEGIN", width/2 + 100, 575);
         }
       }
     }
-  }
+  
   //lose screen for Hunger Games level
   if (lives <= -1 && HungerGamesGame == true) {
     HGGameOver = true;
@@ -372,10 +387,10 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(108,103,96);
+        background(dInstruction);
         //the divergent instructions
         textAlign(CORNER);
-        fill(37,138,191);
+        fill(237,238,241);
         text("LEVEL 3: Divergent", 100, 100);
         textSize(20);
         text("Tris is the catcher", 100, 130);
@@ -383,6 +398,7 @@ void draw() {
         text("Jeanine", 100, 190);
         text("Crow", 100, 210);
         text("Syringe", 100, 230);
+        fill(24,24,24);
         text("CATCH:", 100, 350);
         text("Tobias/Four", 100, 370);
         text("Chocolate Cake", 100, 390);
@@ -392,6 +408,7 @@ void draw() {
         image(four, 100, 450,50,50);
         image(cake, 200, 450,50,50);
         textAlign(CENTER);
+        fill(240,240,240);
         text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
@@ -469,10 +486,10 @@ void draw() {
       MInstruction = true;
       DivergentGame = false;
       if (MInstruction = true) {    
-        background(133,187,252);
+        background(9,34,165);
         // the magnet instructions
         textAlign(CORNER);
-        fill(9,49,70);
+        fill(209,204,207);
         text("LEVEL 4: MAGNET", 100, 100);
         textSize(20);
         text("We are the catcher", 100, 130);
@@ -495,7 +512,7 @@ void draw() {
         text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
-<<<<<<< HEAD
+
   }
   //lose screen for Divergent level
       if (lives <= -1 && DivergentGame == true) {
@@ -503,25 +520,14 @@ void draw() {
       DivergentGame = false;
       if (DGameOver = true) {
         imageMode(CORNER);
-        image(Dover, 0, 0, width, height); 
-        textAlign(CENTER);
-        text("The city has been lost to Jeanine.", width/2, height/2);
-      }
-=======
-    if(lives <= -1 && HungerGamesGame == true){
-     HGGameOver = true;
-     HungerGamesGame = false;
-    if(HGGameOver = true){
-     imageMode(CORNER);
-     image(HGover, 0, 0, width, height); 
-     textSize(45);
+     image(Dover, 0, 0, width, height); 
      textAlign(CENTER);
-     fill(0);
-     text("Another tribute has fallen." , width/2, height-40);  
-     }
->>>>>>> origin/Harry-Potter-Classes
-    }
-
+     fill(88,75,75);
+     text("You have fallen victim to the serum", width/2, height/2); 
+     text("and are now controlled by the Erudite", width/2, height/2+25); 
+      }
+      }
+ 
   //Magnet level
   if (MagnetGame == true) {  
     //background and score/lives keeper
@@ -575,7 +581,6 @@ void draw() {
     }
     //display the player
     p1.display();
-<<<<<<< HEAD
     p1.update();
     //win screen
     if (score >= scorelimit) {
@@ -586,7 +591,7 @@ void draw() {
         image(winner, 0, 0, width, height);
         textAlign(CENTER);
         fill(0);
-        text("CONGRATULATIONS, you graduated magnum cum laude!", width/2, 100);
+        text("CONGRATULATIONS, you graduated magna cum laude!", width/2, 100);
       }
     }
   }
@@ -603,24 +608,7 @@ void draw() {
         text("Welcome to Mr. Sanservino's class", width/2, height/2+225);
       }
     }
-}
-=======
-    p1.update(); 
-   }
-  if(lives <= -1 && DivergentGame == true){
-     DGameOver = true;
-     DivergentGame = false;
-    if(DGameOver = true){
-     imageMode(CORNER);
-     image(Dover, 0, 0, width, height); 
-     textAlign(CENTER);
-     fill(88,75,75);
-     text("You have fallen victim to the serum", width/2, height/2); 
-     text("and are now controlled by the Erudite", width/2, height/2+25);   
-     }
-    } 
  }
->>>>>>> origin/Harry-Potter-Classes
 
 void keyPressed() {
   //allows you to start the Hunger Games game

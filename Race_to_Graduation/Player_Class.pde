@@ -6,7 +6,6 @@
    PImage harry;
    PImage tris;
    PImage fangirls;
-<<<<<<< HEAD
    int HGwidth;
    int HGheight;
    int HPwidth;
@@ -15,9 +14,7 @@
    int Dheight;
    int Mwidth;
    int Mheight; 
-=======
    int d;
->>>>>>> origin/Harry-Potter-Classes
  
    Player() {
      //defining the varibales, PVectors, and PImages
@@ -27,7 +24,6 @@
      katniss = loadImage("hgplayer.png");
      harry = loadImage("hpplayer.png");
      tris = loadImage("dplayer.png");
-<<<<<<< HEAD
      fangirls = loadImage("mplayer.png");
      HGwidth = 60;
      HGheight = 110;
@@ -37,16 +33,11 @@
      Dheight = 130;
      Mwidth = 150;
      Mheight = 120;
-     
-=======
-//     fangirls = loadImage("mplayer.png");
      d = 50;
->>>>>>> origin/Harry-Potter-Classes
    }
  
    //this will allow you to show the player
    void display() {
-<<<<<<< HEAD
     //use booleans to determine what level you are on and adjust the player accordingly 
      if(HungerGamesGame == true) {
      image(katniss, loc.x, loc.y, HGwidth, HGheight);
@@ -59,23 +50,8 @@
      }
      if(MagnetGame == true) {
       image(fangirls, loc.x, loc.y, Mwidth, Mheight);    
-    }  
-=======
-     if(HungerGamesGame == true) {
-     image(katniss, loc.x, loc.y, d ,d+50);
-     }
-     if(HarryPotterGame == true) {
-      image(harry, loc.x, loc.y, d+30 ,d+50);
-     }
-     if(DivergentGame == true) {
-       image(tris, loc.x, loc.y, d+55 ,d+70);
-     }
-//     if(MagnetGame == true) {
-//       image(fangirls, loc.x, loc.y, d ,d+50);
-//     }
->>>>>>> origin/Harry-Potter-Classes
+    }
    }
-   
    
    //this will allow the player to move with your mouse movement
    void update () {
