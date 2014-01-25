@@ -17,6 +17,8 @@
  
    Player() {
      //defining the varibales, PVectors, and PImages
+       //setting location from the bottom to the size of HPheight because that is relatively close to the bottom for every level
+         //we also want the player to be the same distance from the bottom for each level
      loc = new PVector(mouseX, height-HPheight/2);
      katniss = loadImage("hgplayer.png");
      harry = loadImage("hpplayer.png");
@@ -53,7 +55,6 @@
    
    //this will allow the player to move with your mouse movement
    void update () {
-     //setting location from the bottom to the size of HPheight because that is relatively close to the bottom for every level
      loc.set(mouseX, height-HPheight/2);
    }
 
