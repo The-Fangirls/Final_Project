@@ -284,7 +284,9 @@ if(DivergentGame == true){
      imageMode(CORNER);
      image(Dover, 0, 0, width, height); 
      textAlign(CENTER);
-     text("You have fallen victim to the serum and are now controlled by the Erudite", width/2, height/2);   
+     fill(88,75,75);
+     text("You have fallen victim to the serum", width/2, height/2); 
+     text("and are now controlled by the Erudite", width/2, height/2+25);   
      }
     } 
  }
