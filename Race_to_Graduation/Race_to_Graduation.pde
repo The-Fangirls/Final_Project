@@ -287,7 +287,7 @@ void draw() {
     //display the player
     p1.display();
     p1.update();
-    //method of changing from Hunger Games level to Harry Potter level
+    //method of changing from Hunger Games level to Harry Potter instructions
     if (score >= scorelimit) {
       score = 0;
       HungerGamesGame = false;
@@ -323,6 +323,7 @@ void draw() {
       }
     }
   }
+  //lose screen for Hunger Games level
   if (lives <= -1 && HungerGamesGame == true) {
     HGGameOver = true;
     HungerGamesGame = false;
@@ -389,6 +390,7 @@ void draw() {
     //display the player
     p1.display();
     p1.update(); 
+    //method of changing from Harry Potter level to Divergent instructions
     if (score >= scorelimit) {
       score = 0;
       HarryPotterGame = false;
@@ -417,7 +419,9 @@ void draw() {
         text("Press any key to begin", width/2, 575);
       }
     }
-    if (lives <= -1 && HarryPotterGame == true) {
+  }
+      //lose screen for Harry Potter level
+      if (lives <= -1 && HarryPotterGame == true) {
       HPGameOver = true;
       HarryPotterGame = false; 
       if (HPGameOver = true) {
@@ -427,7 +431,6 @@ void draw() {
         text("The battle of Hogwarts has been lost.", width/2, height/2);
       }
     }
-  }
 
 
   //Divergent level
@@ -484,17 +487,7 @@ void draw() {
     //display the player
     p1.display();
     p1.update(); 
-
-    if (lives <= -1 && DivergentGame == true) {
-      DGameOver = true;
-      DivergentGame = false;
-      if (DGameOver = true) {
-        imageMode(CORNER);
-        image(Dover, 0, 0, width, height); 
-        textAlign(CENTER);
-        text("The city has been lost to Jeanine.", width/2, height/2);
-      }
-    }
+    //method of changing from Divergent level to Magnet instructions
     if (score >= scorelimit) {
       score = 0;
       MInstruction = true;
@@ -527,6 +520,17 @@ void draw() {
       }
     }
   }
+  //lose screen for Divergent level
+      if (lives <= -1 && DivergentGame == true) {
+      DGameOver = true;
+      DivergentGame = false;
+      if (DGameOver = true) {
+        imageMode(CORNER);
+        image(Dover, 0, 0, width, height); 
+        textAlign(CENTER);
+        text("The city has been lost to Jeanine.", width/2, height/2);
+      }
+    }
 
   //Magnet level
   if (MagnetGame == true) {  
@@ -582,7 +586,7 @@ void draw() {
     //display the player
     p1.display();
     p1.update();
-    //method of changing levels
+    //win screen
     if (score >= scorelimit) {
       MagnetGame = false;
       Mwin = true;
@@ -594,6 +598,8 @@ void draw() {
         text("CONGRATULATIONS, you graduated magnum cum laude!", width/2, 100);
       }
     }
+  }
+  //lose screen for Magnel level
     if (lives <= -1 && MagnetGame == true) {
       MGameOver = true;
       MagnetGame = false;
@@ -606,6 +612,5 @@ void draw() {
         text("Welcome to Mr. Sanservino's class", width/2, height/2+225);
       }
     }
-  }
 }
 
