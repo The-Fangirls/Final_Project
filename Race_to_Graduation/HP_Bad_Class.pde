@@ -11,7 +11,7 @@ class HPBad {
     vel = new PVector (0, random(1, 4));
     int r = int(random(1, 5));
     hpbad = loadImage("hpb" + r + ".png");
-    d = 30;
+    d = 45;
   }
   
   //this function will display the images as part of the array

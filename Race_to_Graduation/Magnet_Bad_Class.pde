@@ -11,7 +11,7 @@ class MBad {
     vel = new PVector (0, random(1, 4));
     int r = int(random(1, 7));
     mbad = loadImage("mb" + r + ".png");
-    d = 30;
+    d = 50;
   }
   
   //this function will display the images as part of the array

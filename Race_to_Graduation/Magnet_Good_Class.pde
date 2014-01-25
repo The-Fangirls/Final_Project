@@ -12,7 +12,7 @@ class MGood {
     vel = new PVector (0, random(1,4));
     int r = int(random(1,3));
     mgood = loadImage("mg" + r + ".png");
-    d = 30;
+    d = 40;
   }
   
   //this function will display the images as part of the array
