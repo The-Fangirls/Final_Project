@@ -204,7 +204,7 @@ void draw() {
       image(pin, 200, 450,50,50);
       image(bow, 300, 450,50,50);
       textAlign(CENTER);
-      text("Press any key to begin", width/2, 575);
+      text("PRESS ANY KEY TO BEGIN", width/2, 575);
     }
   }
 
@@ -294,7 +294,7 @@ void draw() {
           image(felix,200, 450,50,50);
           image(hallows, 300, 450,50,50);
           textAlign(CENTER);
-          text("Press any key to begin", width/2, 575);
+          text("PRESS ANY KEY TO BEGIN", width/2, 575);
         }
       }
     }
@@ -392,7 +392,7 @@ void draw() {
         image(four, 100, 450,50,50);
         image(cake, 200, 450,50,50);
         textAlign(CENTER);
-        text("Press any key to begin", width/2, 575);
+        text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
   }
@@ -492,7 +492,7 @@ void draw() {
         image(cap, 100, 450,50,50);
         image(gradea, 200, 450,50,50);
         textAlign(CENTER);
-        text("Press any key to begin", width/2, 575);
+        text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
   }
