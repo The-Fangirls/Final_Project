@@ -84,7 +84,7 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-int scorelimit = 2;
+int scorelimit = 4;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
@@ -495,6 +495,7 @@ void draw() {
         text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
+<<<<<<< HEAD
   }
   //lose screen for Divergent level
       if (lives <= -1 && DivergentGame == true) {
@@ -506,6 +507,19 @@ void draw() {
         textAlign(CENTER);
         text("The city has been lost to Jeanine.", width/2, height/2);
       }
+=======
+    if(lives <= -1 && HungerGamesGame == true){
+     HGGameOver = true;
+     HungerGamesGame = false;
+    if(HGGameOver = true){
+     imageMode(CORNER);
+     image(HGover, 0, 0, width, height); 
+     textSize(45);
+     textAlign(CENTER);
+     fill(0);
+     text("Another tribute has fallen." , width/2, height-40);  
+     }
+>>>>>>> origin/Harry-Potter-Classes
     }
 
   //Magnet level
@@ -561,6 +575,7 @@ void draw() {
     }
     //display the player
     p1.display();
+<<<<<<< HEAD
     p1.update();
     //win screen
     if (score >= scorelimit) {
@@ -589,6 +604,23 @@ void draw() {
       }
     }
 }
+=======
+    p1.update(); 
+   }
+  if(lives <= -1 && DivergentGame == true){
+     DGameOver = true;
+     DivergentGame = false;
+    if(DGameOver = true){
+     imageMode(CORNER);
+     image(Dover, 0, 0, width, height); 
+     textAlign(CENTER);
+     fill(88,75,75);
+     text("You have fallen victim to the serum", width/2, height/2); 
+     text("and are now controlled by the Erudite", width/2, height/2+25);   
+     }
+    } 
+ }
+>>>>>>> origin/Harry-Potter-Classes
 
 void keyPressed() {
   //allows you to start the Hunger Games game
