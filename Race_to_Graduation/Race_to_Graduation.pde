@@ -376,10 +376,10 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(108,103,96);
+        background(208,213,234);
         //the divergent instructions
         textAlign(CORNER);
-        fill(37,138,191);
+        fill(23,65,227);
         text("LEVEL 3: Divergent", 100, 100);
         textSize(20);
         text("Tris is the catcher", 100, 130);
