@@ -192,7 +192,7 @@ void draw() {
     if (HGInstruction = true) {
       background(0);
       textAlign(CORNER);
-      fill(24,18,29);
+      fill(242,108,29);
       text("LEVEL 1: Hunger Games", 100, 100);
       textSize(20);
       text("Katniss is the catcher", 100, 130);
@@ -276,8 +276,8 @@ void draw() {
       HungerGamesGame = false;
       HPInstruction = true;
       if (HPInstruction == true) {
-          background(0);
-          fill(254,241,200);
+          background(134,21,1);
+          fill(245,141,5);
           text("LEVEL 2: Harry Potter", 100, 80);
           textSize(20);
           text("Harry is the catcher", 100, 110);
@@ -298,7 +298,7 @@ void draw() {
           image(felix,200, 500,50,50);
           image(hallows, 300, 500,50,50);
           textAlign(CENTER);
-          text("PRESS ANY KEY TO BEGIN", width/2 + 100, 575);
+          text("PRESS ANY KEY TO BEGIN", width/2, 575);
         }
       }
     }
@@ -319,7 +319,7 @@ void draw() {
   //Harry Potter level
   if (HarryPotterGame == true) {  
     //background and score/lives keeper
-    background(0);
+    background(HPbackground);
     textSize(30);
     fill(255);
     rect(20, 30, 120, 50);
@@ -376,10 +376,10 @@ void draw() {
       HarryPotterGame = false;
       DInstruction = true;
       if (DInstruction = true) {
-        background(0);
+        background(108,103,96);
         //the divergent instructions
         textAlign(CORNER);
-        fill(237,238,241);
+        fill(37,138,191);
         text("LEVEL 3: Divergent", 100, 100);
         textSize(20);
         text("Tris is the catcher", 100, 130);
@@ -387,7 +387,6 @@ void draw() {
         text("Jeanine", 100, 190);
         text("Crow", 100, 210);
         text("Syringe", 100, 230);
-        fill(24,24,24);
         text("CATCH:", 100, 350);
         text("Tobias/Four", 100, 370);
         text("Chocolate Cake", 100, 390);
@@ -397,7 +396,6 @@ void draw() {
         image(four, 100, 450,50,50);
         image(cake, 200, 450,50,50);
         textAlign(CENTER);
-        fill(240,240,240);
         text("PRESS ANY KEY TO BEGIN", width/2, 575);
       }
     }
@@ -418,7 +416,7 @@ void draw() {
   //Divergent level
   if (DivergentGame == true) {  
     //background and score/lives keeper
-    background(0);
+    background(Dbackground);
     textSize(30);
     fill(255);
     rect(20, 30, 120, 50);
@@ -475,10 +473,10 @@ void draw() {
       MInstruction = true;
       DivergentGame = false;
       if (MInstruction = true) {    
-        background(9,34,165);
+        background(124,202,232);
         // the magnet instructions
         textAlign(CORNER);
-        fill(209,204,207);
+        fill(9,49,70);
         text("LEVEL 4: MAGNET", 100, 100);
         textSize(20);
         text("We are the catcher", 100, 130);
