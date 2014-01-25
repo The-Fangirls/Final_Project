@@ -601,7 +601,9 @@ void draw() {
         imageMode(CORNER);
         background(Mover);
         textAlign(CENTER);
-        text("Sorry, you didn't make it to graduation.", width/2, height/2);
+        textSize(35);
+        fill(9,49,70);
+        text("Welcome to Mr. Sanservino's class", width/2, height/2+225);
       }
     }
   }
