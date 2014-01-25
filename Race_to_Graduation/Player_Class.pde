@@ -16,7 +16,7 @@
      harry = loadImage("hpplayer.png");
      tris = loadImage("dplayer.png");
      fangirls = loadImage("mplayer.png");
-     d = 50;
+     d = 60;
    }
  
    //this will allow you to show the player
