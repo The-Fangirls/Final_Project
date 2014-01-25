@@ -183,7 +183,9 @@ void draw() {
     MainInstruction = false;
     HGInstruction = true;
     if (HGInstruction = true) {
-      background(255, 0, 0);
+      background(0);
+      textAlign(CORNER);
+      fill(242,108,29);
       text("LEVEL 1: Hunger Games", 100, 100);
       textSize(20);
       text("Katniss is the catcher", 100, 130);
@@ -195,12 +197,14 @@ void draw() {
       text("Prim", 100, 370);
       text("Mockingjay Pin", 100, 390);
       text("Bow and Arrow", 100, 410);
-      image(snow, 100, 270);
-      image(rose, 150, 270);
-      image(tracker, 200, 270);
-      image(prim, 100, 450);
-      image(pin, 150, 450);
-      image(bow, 200, 450);
+      image(snow, 100, 270, 50,50);
+      image(rose, 200, 270,50,50);
+      image(tracker, 300, 270,50,50);
+      image(prim, 100, 450,50,50);
+      image(pin, 200, 450,50,50);
+      image(bow, 300, 450,50,50);
+      textAlign(CENTER);
+      text("Press any key to begin", width/2, 575);
     }
   }
 
@@ -232,6 +236,7 @@ void draw() {
   if (HungerGamesGame == true) {  
     //background and score/lives keeper
     background(HGbackground);
+    textAlign(CORNER);
     textSize(30);
     fill(255);
     rect(20, 30, 120, 50);
@@ -288,10 +293,11 @@ void draw() {
       HungerGamesGame = false;
       HPInstruction = true;
       if (HPInstruction == true) {
-        background(0, 0, 255);
+        background(134,21,1);
 
         //the harry potter instructions
         if (HPInstruction = true) {
+          fill(254,141,5);
           text("LEVEL 2: Harry Potter", 100, 100);
           textSize(20);
           text("Harry is the catcher", 100, 130);
@@ -304,13 +310,15 @@ void draw() {
           text("Golden Snitch", 100, 370);
           text("Felix Felicis", 100, 390);
           text("The Deathly Hallows Symbol", 100, 410);
-          image(umbridge, 100, 280);
-          image(voldemort, 150, 280);
-          image(bludger, 200, 280);
-          image(mark, 250, 280);
-          image(snitch, 100, 450);
-          image(felix, 150, 450);
-          image(hallows, 200, 450);
+          image(umbridge, 100, 280,50,50);
+          image(voldemort, 200, 280,50,50);
+          image(bludger, 300, 280,50,50);
+          image(mark, 400, 280,50,50);
+          image(snitch, 100, 450,65,65);
+          image(felix,200, 450,50,50);
+          image(hallows, 300, 450,50,50);
+          textAlign(CENTER);
+          text("Press any key to begin", width/2, 575);
         }
       }
     }
