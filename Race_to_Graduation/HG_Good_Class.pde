@@ -23,10 +23,5 @@ class HGGood {
   void move() {
     loc.add(vel);
   }
-
-  //  void reset() {
-  //    loc.set(random(width), -d);
-  //    vel.set(0, random(1,4));
-  //  }
 }
 

@@ -90,24 +90,26 @@ int scorelimit = 2;
 void setup() {
   imageMode(CENTER);
   //creating initial values of booleans 
+  //levels
   HarryPotterGame = false;
   HungerGamesGame = false;
   DivergentGame = false;
   MagnetGame = false;
-
+  //game over screens
   HPGameOver = false;
   HGGameOver = false;
   DGameOver = false;
   MGameOver = false;
-
+  //instruction screens
   MainInstruction = true;
   HGInstruction = false;
   HPInstruction = false;
   DInstruction = false;
   MInstruction = false;
-
+  //win screen
   Mwin = false;
-
+  
+  //size of viewing window
   size(600, 600);
   //pictures
   HGover = loadImage("hggameover.png");
@@ -148,18 +150,9 @@ void setup() {
 
   //adding objects that are part of a class
   p1 = new Player(); 
-  hpg.add(new HPGood(width/2, 120));
-  hpb.add(new HPBad(width/2, -5));
-  hgg.add(new HGGood(width/2, 120));
-  hgb.add(new HGBad(width/2, -5));
-  dg.add(new DGood(width/2, 120));
-  db.add(new DBad(width/2, -5));
-  mg.add(new MGood(width/2, 120));
-  mb.add(new MBad(width/2, -5));
 }
 void draw() {
-  //instruction screen
-
+  //general instruction screen
   if (MainInstruction == true) {
     background(128, 128, 255);
     textSize(28);
@@ -184,6 +177,7 @@ void draw() {
     text("Good Luck!", 10, 510);  
     text("Click to Play", 10, 535);
   } 
+  //this will allow you to get to the hg start the game
   if (mousePressed && MainInstruction == true) {
     MainInstruction = false;
     HGInstruction = true;

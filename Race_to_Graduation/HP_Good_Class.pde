@@ -1,4 +1,5 @@
 //this is a class for the good things on the Harry Potter Level
+
 class HPGood {
   //these are the variables needed to create the HGGood class
   PVector loc, vel;
