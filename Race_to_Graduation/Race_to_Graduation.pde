@@ -88,7 +88,7 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-int scorelimit = 2;
+int scorelimit = 15;
 
 //these are the things that we want to happen only once at the start of the game
 void setup() {
