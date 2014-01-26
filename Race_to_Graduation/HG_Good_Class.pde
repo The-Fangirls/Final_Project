@@ -23,10 +23,13 @@ class HGGood {
   void move() {
     loc.add(vel);
   }
+<<<<<<< HEAD
 
   //  void reset() {
   //    loc.set(random(width), -d);
   //    vel.set(0, random(1,4));
   //  }
+=======
+>>>>>>> origin/Magnet-Classes
 }
 
