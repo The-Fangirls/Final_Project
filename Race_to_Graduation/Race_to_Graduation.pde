@@ -311,7 +311,9 @@ void draw() {
       imageMode(CORNER);
       image(HGover, 0, 0, width, height); 
       textAlign(CENTER);
-      text("You have lost the Hunger Games.", width/2, height/2);
+      textSize(35);
+      fill(0);
+      text("You have lost the Hunger Games", width/2, 575);
     }
   }
 
