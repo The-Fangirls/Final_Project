@@ -1,4 +1,3 @@
-
  class Player {
    //these are the variables needed to create the player class
    PVector loc;
@@ -77,6 +76,7 @@
       return false;
     }
   }
+
   //this boolean will be able to tell when the player intersects with the good things in the harry potter class
   boolean findhpg(HPGood h) {
     if (loc.dist(h.loc) < HPwidth/2 + h.d/2 && loc.dist(h.loc) < HPheight/2 + h.d/2) {
@@ -133,3 +133,4 @@
    }
   }
  }
+
