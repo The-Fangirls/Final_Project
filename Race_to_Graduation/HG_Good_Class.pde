@@ -22,6 +22,7 @@ class HGGood {
   //this function will move the objects which are part of the array
   void move() {
     loc.add(vel);
+    
   }
 }
 
