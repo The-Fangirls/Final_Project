@@ -1,30 +1,4 @@
-
-<<<<<<< HEAD
-class Player {
-  //these are the variables needed to great the player class
-  PVector loc;
-  PImage katniss;
-  int d;
-
-  Player() {
-    loc = new PVector(mouseX, height-d);
-    katniss = loadImage("hgplayer.png");
-    d = 50;
-  }
-
-  void display() {
-    fill(255, 0, 0);
-    image(katniss, loc.x, loc.y, d ,d+50);
-  }
-
-  void update() {
-    loc.set(mouseX, height-d*2);
-  }
-
-  //this boolean will be able to tell when the player intersects with the good things in the hunger games class
-  boolean findhgg(HGGood h) {
-    if (loc.dist(h.loc) < d/2 + h.d/2 ) {
-=======
+//this is the class for the player/catcher
  class Player {
    //these are the variables needed to create the player class
    PVector loc;
@@ -88,7 +62,6 @@ class Player {
   //this boolean will be able to tell when the player intersects with the good things in the hunger games class
   boolean findhgg(HGGood h) {
     if (loc.dist(h.loc) < HGwidth/2 + h.d/2 && loc.dist(h.loc) < HGheight/2 + h.d/2) {
->>>>>>> origin/Magnet-Classes
       return true;
     }
     else {
@@ -97,21 +70,15 @@ class Player {
   }
   //this boolean will be able to tell when the player intersects with the bad things in the hunger games class
   boolean findhgb(HGBad b) {
-<<<<<<< HEAD
-    if (loc.dist(b.loc) < d/2 + b.d/2 ) {
-=======
+
     if (loc.dist(b.loc) < HGwidth/2 + b.d/2 && loc.dist(b.loc) < HGheight/2 + b.d/2 ) {
->>>>>>> origin/Magnet-Classes
       return true;
     }
     else {
       return false;
     }
   }
-<<<<<<< HEAD
-}
 
-=======
   //this boolean will be able to tell when the player intersects with the good things in the harry potter class
   boolean findhpg(HPGood h) {
     if (loc.dist(h.loc) < HPwidth/2 + h.d/2 && loc.dist(h.loc) < HPheight/2 + h.d/2) {
@@ -168,4 +135,4 @@ class Player {
    }
   }
  }
->>>>>>> origin/Magnet-Classes
+

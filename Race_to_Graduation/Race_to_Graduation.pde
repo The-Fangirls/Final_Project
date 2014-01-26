@@ -1,11 +1,6 @@
 //This is the code for the game
 
-<<<<<<< HEAD
-//initializing classes
-Player p1;
-ArrayList<HGGood> hgg = new ArrayList<HGGood>();
-ArrayList<HGBad> hgb = new ArrayList<HGBad>();
-=======
+
 //game booleans
 boolean HarryPotterGame;
 boolean HungerGamesGame;
@@ -85,7 +80,6 @@ ArrayList<DBad> db = new ArrayList<DBad>();
 //Magnet
 ArrayList<MGood> mg = new ArrayList<MGood>();
 ArrayList<MBad> mb = new ArrayList<MBad>();
->>>>>>> origin/Magnet-Classes
 
 //timing mechanisms
 int currentTime = 0;
@@ -94,15 +88,6 @@ int oldTime = 0;
 //other variables that are needed
 int score = 0;
 int lives = 3;
-<<<<<<< HEAD
-
-//these are the things that we want to happen only once at the start of the game
-void setup() {
-  size(600, 600);
-  p1 = new Player(); 
-  hgg.add(new HGGood(width/2, 120));
-  hgb.add(new HGBad(width/2, -5));
-=======
 int scorelimit = 2;
 
 //these are the things that we want to happen only once at the start of the game
@@ -171,46 +156,8 @@ void setup() {
 
   //adding objects that are part of a class
   p1 = new Player(); 
->>>>>>> origin/Magnet-Classes
 }
 void draw() {
-<<<<<<< HEAD
-//setup of lives and score
-  background(0);
-  textSize(30);
-  fill(255);
-  rect(20, 30, 120, 50);
-  rect(width-140, 30, 120, 50);
-  fill(0);
-  text(score, 70, 65);
-  text(lives, width-90, 65);
-  fill(255,0,0);
-  textSize(20);
-  text("Score", 60, 20);
-  text("Lives", width-100,20);
-//timing mechanisms
-  currentTime = millis();
-  changeTime = currentTime-oldTime;
-  if (changeTime > 2000) {
-    oldTime = currentTime;
-    hgg.add(new HGGood(random(width), -5));
-    hgb.add(new HGBad(random(width), -5));
-  }
-  
-  for (int i = hgg.size()-1; i >= 0; i--) {
-    HGGood h = hgg.get(i);
-    h.display();
-    h.move();
-    if (p1.findhgg(h) == true) {
-      hgg.remove(i);
-      score++;
-    }
-    if (h.loc.y >= height) {
-      hgg.remove(i);
-    }
-  }
-    for (int j = hgb.size()-1; j >= 0; j--) {
-=======
   //general instruction screen
   if (MainInstruction == true) {
     background(128, 128, 255);
@@ -310,7 +257,6 @@ void draw() {
     }
     for (int j = hgb.size()-1; j >= 0; j--) {
       //bad objects
->>>>>>> origin/Magnet-Classes
       HGBad b = hgb.get(j);
       b.display();
       b.move();
@@ -322,13 +268,7 @@ void draw() {
         hgb.remove(j);
       }
     }
-<<<<<<< HEAD
-    p1.display();
-    p1.update();
-  }
 
-
-=======
     //display the player
     p1.display();
     p1.update();
@@ -683,5 +623,3 @@ void keyPressed() {
     MagnetGame = true;
   } 
 }
-  
->>>>>>> origin/Magnet-Classes
