@@ -18,7 +18,7 @@
  
    Player() {
      //defining the varibales, PVectors, and PImages
-     //setting location from the bottom to the size of HPheight because all heights are around this value
+     //setting location from the bottom to the size of HPheight because all heights are around this value and we want the height above the bottom of each player to be the same
          //we didn't use just one variable in order to easily change each player individually
      loc = new PVector(mouseX, height-HPheight/2);
      katniss = loadImage("hgplayer.png");
@@ -31,8 +31,8 @@
      HPheight = 150;
      Dwidth = 125;
      Dheight = 150;
-     Mwidth = 155;
-     Mheight = 130;
+     Mwidth = 150;
+     Mheight = 94;
      d = 50;
    }
  
